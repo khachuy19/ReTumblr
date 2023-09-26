@@ -1,0 +1,25 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 8px;
+    padding: 8px;
+    cursor: pointer;
+
+    &:hover {
+        background: RGB(var(--secondary-accent));
+    }
+}
+
+.img {
+    width: 36px;
+    height: 36px;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+.info {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+}

@@ -1,0 +1,11 @@
+.to-top-btn {
+    opacity: 1;
+    pointer-events: auto;
+    background: RGB(var(--navy));
+    border-radius: 3px;
+    padding: 4px 5px 1px;
+    transition: opacity .4s;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}

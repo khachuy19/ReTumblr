@@ -1,0 +1,88 @@
+.wrapper {
+    @mixin post-padding($post-padding: 20px) {
+        margin: 0 $post-padding;
+    }
+
+    @include post-padding(10px);
+    padding: 12px 0;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(var(--black), .13);
+
+    .note-btn {
+        background: transparent;
+        border: 1px solid rgba(var(--black), .15);
+        border-radius: 18px;
+        display: flex;
+        flex-shrink: 0;
+        align-items: center;
+        height: 36px;
+        min-width: 88px;
+        padding: 6px 16px;
+        font: inherit;
+        font-weight: 500;
+        line-height: 1.6;
+
+        .f-light {
+            margin-left: 4px;
+            font-weight: 400;
+            font-size: 1.7rem;
+            line-height: 1.4;
+        }
+    }
+
+    .tool-tip {
+        color: #000;
+        background-color: #fff !important;
+    }
+
+    .interact-list {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 20px;
+        height: 21px;
+
+
+        .share-btn {
+            height: 110%;
+            background-color: transparent;
+        }
+
+        .reply-btn {
+            height: 100%;
+            background-color: transparent;
+        }
+
+        .share-link {
+            display: inline-block;
+            height: 100%;
+        }
+
+        .like-btn {
+            height: 100%;
+            background-color: transparent;
+
+            .like {
+                display: flex;
+            }
+
+            .liked {
+                display: none;
+            }
+
+            &.active {
+                .like {
+                    display: none;
+                }
+
+                .liked {
+                    display: flex;
+                }
+            }
+        }
+    }
+}

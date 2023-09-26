@@ -1,0 +1,105 @@
+.wrapper {
+    width: 100%;
+    font-family: var(--font-family);
+    color: var(--color-title);
+    margin-bottom: 38px;
+
+    h1 {
+        padding: 0px 8px;
+        font-size: 2.1rem;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+
+    .blog-list {
+        list-style: none;
+        padding: 8px 0;
+        display: flex;
+        flex-direction: column;
+
+        .blog-item {
+            display: flex;
+            align-items: center;
+
+            .blog-link {
+                flex: 1;
+                display: flex;
+                flex-direction: row;
+                padding: 8px;
+                justify-content: start;
+                align-items: center;
+                gap: 12px;
+
+                .img {
+                    width: 37px;
+                    min-width: 37px;
+                    border-radius: 3px;
+                }
+
+                .blog-title {
+                    font-size: 1.4rem;
+                    font-weight: 500;
+                    overflow-wrap: break-word;
+                    word-wrap: break-word;
+                    -webkit-hyphens: auto;
+                    hyphens: auto;
+
+                    .blog-name {
+                        word-break: break-word;
+                        text-align: left;
+                    }
+
+                    .blog-des {
+                        color: rgba(var(--white-on-dark), .65);
+                        -webkit-line-clamp: 1;
+                        -webkit-box-orient: vertical;
+                        display: -webkit-box;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        line-height: 1.5;
+                    }
+                }
+            }
+
+            .follow-btn {
+                height: 20px;
+                min-width: 60px;
+                margin-right: 5px;
+                font: inherit;
+                font-weight: 500;
+                line-height: 20px;
+                background: transparent;
+                color: rgb(var(--accent));
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            .clear-btn {
+                background: transparent;
+                height: 16px;
+                margin-top: 3px;
+
+                &:hover svg {
+                    fill: rgba(var(--white-on-dark), 1);
+                }
+            }
+        }
+    }
+
+    .last-link {
+        font: inherit;
+        font-weight: 500;
+        color: rgb(var(--accent));
+        padding-left: 8px;
+        margin-top: 12px;
+        display: inline-block;
+        position: relative;
+        top: 5px;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

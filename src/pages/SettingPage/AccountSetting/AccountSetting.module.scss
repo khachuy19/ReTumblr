@@ -1,0 +1,202 @@
+.wrapper {
+    flex: 1;
+    margin: 14px 20px;
+    padding: 20px 24px;
+    background: RGB(var(--white));
+    color: RGB(var(--black));
+    border-radius: 3px;
+
+    .heading {
+        border-bottom: 2px solid rgba(var(--black), .13);
+        padding-bottom: 28px;
+        font-size: 2.4rem;
+        font-weight: 500;
+        line-height: 1.3;
+    }
+
+    .settings {
+        list-style-type: none;
+
+        .setting-item {
+            display: flex;
+            padding: 20px 10px;
+            font-size: 1.6rem;
+            border-bottom: 1px solid rgba(var(--black), .07);
+
+            .name {
+                display: inline-block;
+                font-weight: 500;
+                min-width: 165px;
+            }
+
+            .info-cont {
+                flex: 1;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+
+                svg {
+                    margin-right: 12px;
+                }
+            }
+
+            .info {
+                font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+                font-weight: 400;
+                font-size: 1.5rem;
+                position: relative;
+                display: flex;
+
+            }
+
+            .info-block {
+                display: flex;
+                flex-direction: column;
+                margin-left: 10px;
+
+                .info-container {
+                    display: flex;
+                    flex-direction: row;
+
+                    .toggle-btn {
+                        margin-top: 5px;
+
+                        .label1 {
+                            display: inline-block;
+                            width: 24px;
+                            height: 14px;
+                            position: relative;
+
+                            input[type='checkbox'] {
+                                opacity: 0;
+                            }
+
+                            .btn-bg {
+                                border-radius: 14px;
+                                cursor: pointer;
+                                background-color: rgba(var(--black), .65);
+                                transition: all .1s;
+                                position: absolute;
+                                top: 0;
+                                bottom: 0;
+                                left: 0;
+                                right: 0;
+
+                                &::before {
+                                    content: "";
+                                    background-color: RGB(var(--white));
+                                    border-radius: 50%;
+                                    transition: all .1s;
+                                    position: absolute;
+                                    width: 10px;
+                                    height: 10px;
+                                    bottom: 2px;
+                                    left: 2px;
+                                }
+                            }
+
+                            .btn-bg.active {
+                                background-color: RGB(var(--blue));
+
+                                &::before {
+                                    left: 12px;
+                                }
+                            }
+                        }
+                    }
+
+                    .content {
+                        padding: 0 10px;
+                        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+
+                        .label2 {
+                            color: rgba(var(--black), .8);
+                            font-size: 1.5rem;
+                        }
+
+                        & p {
+                            margin: 6px 0;
+                            color: rgba(var(--black), .65);
+                            font-size: 1.4rem;
+                        }
+                    }
+                }
+            }
+
+            select {
+                font-family: Arial, Helvetica, sans-serif;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                background: RGB(var(--white));
+                border: 1px solid rgba(var(--black), .13);
+                color: rgba(var(--black), .8);
+                border-radius: 4px;
+                margin: 0;
+                padding: 7px 30px 7px 10px;
+                font-size: 1.5rem;
+                font-weight: 400;
+                line-height: 1.5;
+            }
+
+            select.language-select {
+                padding-right: 30px;
+            }
+
+            .top {
+                display: flex;
+                gap: 4px;
+                flex-flow: row nowrap;
+            }
+
+            .month-p,
+            .day-p,
+            .year-p {
+                position: relative;
+            }
+
+            .btn {
+                --button-text: rgba(var(--black), 0.40);
+                --button-bg: rgba(var(--black), 0.13);
+                border-color: rgba(var(--black), 0.15);
+                border-radius: 20px;
+                color: var(--button-text);
+                background: var(--button-bg);
+                justify-content: center;
+                align-items: center;
+                text-decoration: none;
+                display: flex;
+                padding: 6px 15px;
+                font-weight: 700;
+                margin-left: 12px;
+
+                &.active {
+                    background: RGB(var(--accent));
+                }
+            }
+
+            .caret-icon {
+                position: absolute;
+                height: 100%;
+                top: 0;
+                right: 8px;
+                fill: rgba(var(--black), .65);
+                width: 11px;
+            }
+
+            .bottom {
+                p {
+                    font-family: Arial, Helvetica, sans-serif;
+                    color: rgba(var(--black), .65);
+                    font-size: 1.4rem;
+                    font-weight: 400;
+                }
+
+                span a {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
