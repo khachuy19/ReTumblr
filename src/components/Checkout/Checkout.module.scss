@@ -20,6 +20,252 @@
         .blog-item {
             display: flex;
             align-items: center;
+            padding-right: 8px;
+
+            &:hover {
+                background-color: rgba(var(--white-on-dark), .07);
+            }
+
+            .checkout-popper {
+                width: 280px;
+                background: #fff;
+                border-radius: 3px;
+                overflow: hidden;
+
+                .popper-wrapper {
+                    width: 100%;
+
+                    .box-container {
+                        .loading3 {
+                            border-radius: inherit;
+                            background: linear-gradient(5deg, RGB(var(--green)), RGB(var(--blue)), RGB(var(--purple)), RGB(var(--red)), RGB(var(--pink)), RGB(var(--orange)), RGB(var(--yellow)));
+                            background-size: 250% 100%;
+                            width: 100%;
+                            height: 4px;
+                            animation: 4s linear infinite __tNh;
+                        }
+
+                        @keyframes __tNh {
+                            0% {
+                                background-position: 0%;
+                            }
+
+                            100% {
+                                background-position: 500%;
+                            }
+                        }
+
+                        .box-content {
+                            justify-content: space-between;
+                            align-items: center;
+                            min-height: 50px;
+                            padding: 10px;
+                            display: flex;
+
+                            p {
+                                color: rgb(var(--black));
+                                font-size: 1.4rem;
+                                font-weight: 500;
+                                line-height: 1.42857;
+                            }
+
+                            .box {
+                                background: rgba(var(--black), .13);
+                                border-radius: 3px;
+                                width: 69px;
+                                height: 30px;
+                            }
+                        }
+                    }
+
+                    .main {
+                        position: relative;
+
+                        .popper-link {
+                            display: block;
+
+                            .top-img {
+                                object-fit: cover;
+                                height: 140px;
+                                width: 100%;
+                            }
+                        }
+
+                        .content {
+                            padding-top: 21.3333px;
+                            padding-bottom: 21.3333px;
+
+                            .head {
+                                width: 100%;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                padding: 10px;
+                                display: flex;
+
+                                .head-link {
+                                    font-weight: 500;
+                                    text-decoration: none;
+                                    display: inline-block;
+                                    max-width: 105px;
+                                    width: 100%;
+
+                                    .text {
+                                        white-space: nowrap;
+                                        text-overflow: ellipsis;
+                                        overflow: hidden;
+                                    }
+                                }
+
+                                .head-control {
+                                    flex: 1;
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+
+                                    .add-ms-btn {
+                                        height: 24px;
+                                        margin-left: 10px;
+                                        background-color: transparent;
+                                    }
+
+                                    .more-btn {
+                                        height: 24px;
+
+                                        svg {
+                                            fill: #fff;
+                                        }
+                                    }
+
+                                    .popper-follow-btn {
+                                        background-color: #fff;
+                                        height: 24px;
+                                        border-radius: 3px;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        min-width: 72px;
+                                        padding: 4px 7px 5px;
+                                        font-size: 1.4rem;
+                                        font-weight: 700;
+                                    }
+                                }
+                            }
+
+                            .avt-link {
+                                display: block;
+                                width: 100%;
+                                height: 0px;
+
+                                .img-wrapper {
+                                    display: flex;
+                                    justify-content: center;
+                                    transform: translateY(-81%);
+                                    padding-bottom: 20px;
+
+                                    .img-round {
+                                        width: 74px;
+                                        height: 74px;
+                                        background: #fff;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        border-radius: 50%;
+                                        animation: .35s ease-in-out wj3Ip;
+                                    }
+
+                                    @keyframes wj3Ip {
+
+                                        0%,
+                                        20% {
+                                            transform: scale3d(0, 0, 0);
+                                        }
+
+                                        100% {
+                                            transform: none;
+                                        }
+                                    }
+
+                                    .avt {
+                                        width: 64px;
+                                        height: 64px;
+                                        border-radius: 50%;
+
+                                    }
+                                }
+                            }
+
+                            .title {
+                                padding: 0 15px;
+                                width: 100%;
+
+                                .heading {
+                                    font-family: "Sans Serif";
+                                    font-weight: bold;
+                                    color: var(--blog-title-color, rgb(68, 68, 68));
+                                    font-size: 1.8rem;
+                                    -webkit-line-clamp: 2;
+                                    -webkit-box-orient: vertical;
+                                    display: -webkit-box;
+                                    text-align: center;
+                                    word-wrap: break-word;
+                                    -webkit-hyphens: auto;
+                                    hyphens: auto;
+                                    text-overflow: ellipsis;
+                                    width: 100%;
+                                    margin-bottom: 8px;
+                                    line-height: 1.2;
+                                }
+
+                                .des {
+                                    font-family: Arial, Helvetica, sans-serif;
+                                    max-height: 40px;
+                                    font-size: 1.5rem;
+                                    font-weight: 400;
+                                    line-height: 1.42857;
+                                    overflow-wrap: break-word;
+                                    word-wrap: break-word;
+                                    -webkit-hyphens: auto;
+                                    hyphens: auto;
+                                    color: var(--blog-title-color, #444444);
+                                    white-space: pre-line;
+                                    text-align: center;
+                                    overflow-wrap: anywhere;
+                                    width: 100%;
+                                    transition: max-height 50ms;
+                                    position: relative;
+                                    overflow: hidden;
+                                }
+                            }
+
+                        }
+
+                        .recent-posts {
+                            height: 90px;
+                            padding-bottom: 10px;
+                            padding-left: 5px;
+                            padding-right: 5px;
+                            display: flex;
+
+                            .post-link {
+                                border-radius: 3px;
+                                width: 100%;
+                                height: 100%;
+                                margin: 0 5px;
+                                animation: .35s ease-in-out PFNjv;
+                                position: relative;
+                                overflow: hidden;
+
+                                .post-img {
+                                    object-fit: cover;
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
 
             .blog-link {
                 flex: 1;

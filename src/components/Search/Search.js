@@ -52,7 +52,7 @@ function Search() {
     return (
         <div className={cx('wrapper')}>
             <HeadlessTippy
-                placement="bottom-end"
+                placement="bottom"
                 offset={[0, 5]}
                 interactive
                 visible={showResult && searchResult.length > 0}

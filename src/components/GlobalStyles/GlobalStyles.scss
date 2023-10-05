@@ -106,22 +106,21 @@ body {
 
     .tippy-box {
         border-radius: 8px;
-        font-weight: 600;
+        font-weight: 500;
         font-size: 1.6rem;
         line-height: 2.2rem;
-        background-color: rgba(84, 84, 84, 0.92);
     }
 
-    .tippy-arrow {
-        color: rgba(84, 84, 84, 0.92);
-    }
+    // .tippy-box[data-placement^='bottom']>.tippy-arrow:before {
+    //     top: -8px;
+    // }
 
-    .tippy-content {
-        padding: 8px 9px;
-    }
+    .tippy-box[data-theme~='red'] {
+        background-color: rgb(255, 73, 48);
 
-    .tippy-box[data-placement^='bottom']>.tippy-arrow:before {
-        top: -8px;
+        .tippy-arrow::before {
+            border-top-color: rgb(255, 73, 48);
+        }
     }
 
     .npf_row {

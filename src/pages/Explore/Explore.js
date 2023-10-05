@@ -22,7 +22,7 @@ function Explore({ children }) {
                 if (window.scrollY >= 260 && window.oldScroll < window.scrollY) {
                     let offsetVal = exploreComputedSt.getPropertyValue('--offset');
                     if (offsetVal !== '53px') {
-                        console.log(offsetVal);
+                        // console.log(offsetVal);
                         exploreRef.current.style.setProperty('--offset', '53px');
                         exploreRef.current.style.setProperty('--dashboard-tabs-header-height', '0px');
                     }
@@ -31,7 +31,7 @@ function Explore({ children }) {
                     let offsetVal = exploreComputedSt.getPropertyValue('--offset');
 
                     if (offsetVal !== '0px') {
-                        console.log(offsetVal);
+                        // console.log(offsetVal);
                         try {
                             exploreRef.current.style.setProperty('--offset', '0px');
                             exploreRef.current.style.setProperty('--dashboard-tabs-header-height', '53px');

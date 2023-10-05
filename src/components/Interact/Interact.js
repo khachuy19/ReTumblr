@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react';
@@ -12,10 +12,13 @@ import { LikeIcon, LikedIcon, ReblogIcon, ReplyIcon, ShareIcon } from '../Icons'
 const cx = classNames.bind(styles);
 
 function Interact({ reply = true, notes }) {
+    const [like, setLike] = useState(false);
+
     const buttonRef = useRef();
 
     const handleLike = () => {
-        buttonRef.current.classList.toggle(cx('active'));
+        // buttonRef.current.classList.toggle(cx('active'));
+        setLike((like) => !like);
     };
 
     return (
@@ -60,17 +63,30 @@ function Interact({ reply = true, notes }) {
                     </Link>
                 </Tippy>
 
-                <Tippy
-                    animation="shift-away"
-                    theme={'material'}
-                    content={<span style={{ fontWeight: 500 }}>Like</span>}
-                    arrow
-                >
-                    <button ref={buttonRef} className={cx('like-btn')} onClick={handleLike}>
-                        <LikeIcon className={cx('like')} />
-                        <LikedIcon className={cx('liked')} />
-                    </button>
-                </Tippy>
+                {like ? (
+                    <Tippy
+                        className={cx('liked-tippy')}
+                        animation="shift-away"
+                        theme="red"
+                        content={<span style={{ color: 'rgb(34, 34, 34)' }}>Liked</span>}
+                        arrow
+                    >
+                        <button className={cx('like-btn')} onClick={handleLike}>
+                            <LikedIcon className={cx('liked')} />
+                        </button>
+                    </Tippy>
+                ) : (
+                    <Tippy
+                        animation="shift-away"
+                        theme={'material'}
+                        content={<span style={{ fontWeight: 500 }}>Like</span>}
+                        arrow
+                    >
+                        <button className={cx('like-btn')} onClick={handleLike}>
+                            <LikeIcon className={cx('like')} />
+                        </button>
+                    </Tippy>
+                )}
             </div>
         </div>
     );

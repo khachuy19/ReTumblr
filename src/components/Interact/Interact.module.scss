@@ -62,27 +62,14 @@
             height: 100%;
         }
 
+        .liked-tippy {
+            background: red;
+        }
+
         .like-btn {
             height: 100%;
             background-color: transparent;
 
-            .like {
-                display: flex;
-            }
-
-            .liked {
-                display: none;
-            }
-
-            &.active {
-                .like {
-                    display: none;
-                }
-
-                .liked {
-                    display: flex;
-                }
-            }
         }
     }
 }

@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
+import HeadlessTippy from '@tippyjs/react/headless';
+import { useState } from 'react';
 
 import styles from './Radar.module.scss';
 import Image from '../Image';
@@ -11,6 +13,8 @@ import Blaze from '../Blaze';
 const cx = classNames.bind(styles);
 
 function Radar() {
+    const [showMore, setShowMore] = useState(false);
+
     return (
         <div className={cx('wrapper')}>
             <div className={cx('content')}>
@@ -29,9 +33,83 @@ function Radar() {
                                 <button className={cx('follow-btn')}>Follow</button>
                             </div>
                             <div className={cx('more')}>
-                                <button className={cx('more-btn')}>
-                                    <MoreIcon />
-                                </button>
+                                <HeadlessTippy
+                                    placement="bottom"
+                                    interactive
+                                    visible={showMore}
+                                    onClickOutside={() => setShowMore(!showMore)}
+                                    render={(attrs) => (
+                                        <div className={cx('checkout-popper')} tabIndex="-1" {...attrs}>
+                                            <div className={cx('checkout-popper')} tabIndex="-1">
+                                                <div className={cx('popper-wrapper')}>
+                                                    <ul className={cx('more-list')}>
+                                                        <li
+                                                            onClick={() => setShowMore(!showMore)}
+                                                            className={cx('more-item')}
+                                                        >
+                                                            <Link className={cx('more-link')}></Link>
+                                                        </li>
+                                                        <li
+                                                            onClick={() => setShowMore(!showMore)}
+                                                            className={cx('more-item', 'two-lines')}
+                                                        >
+                                                            <p>Community Label: Everyone</p>
+                                                            <span className={cx('ms-lb-btn')}>Missing label?</span>
+                                                        </li>
+                                                        <li
+                                                            onClick={() => setShowMore(!showMore)}
+                                                            className={cx('more-item')}
+                                                        >
+                                                            <button className={cx('more-item-btn')}>Copy link</button>
+                                                        </li>
+                                                        <li
+                                                            onClick={() => setShowMore(!showMore)}
+                                                            className={cx('more-item')}
+                                                        >
+                                                            <button className={cx('more-item-btn')}>Unfollow</button>
+                                                        </li>
+                                                        <li
+                                                            onClick={() => setShowMore(!showMore)}
+                                                            className={cx('more-item')}
+                                                        >
+                                                            <button className={cx('more-item-btn')}>
+                                                                Subscribe to conversation
+                                                            </button>
+                                                        </li>
+                                                        <li
+                                                            onClick={() => setShowMore(!showMore)}
+                                                            className={cx('more-item')}
+                                                        >
+                                                            <button className={cx('more-item-btn')}>
+                                                                Content settings
+                                                            </button>
+                                                        </li>
+                                                        <li
+                                                            onClick={() => setShowMore(!showMore)}
+                                                            className={cx('more-item')}
+                                                        >
+                                                            <button className={cx('more-item-btn', 'red-color')}>
+                                                                Report sajanrai
+                                                            </button>
+                                                        </li>
+                                                        <li
+                                                            onClick={() => setShowMore(!showMore)}
+                                                            className={cx('more-item')}
+                                                        >
+                                                            <button className={cx('more-item-btn', 'red-color')}>
+                                                                Block sajanrai
+                                                            </button>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )}
+                                >
+                                    <button className={cx('more-btn')} onClick={() => setShowMore(!showMore)}>
+                                        <MoreIcon />
+                                    </button>
+                                </HeadlessTippy>
                             </div>
                         </div>
                     </header>

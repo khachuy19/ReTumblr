@@ -1,6 +1,5 @@
 import { useEffect, useState, useRef, useCallback } from 'react';
 import classNames from 'classnames/bind';
-import axios from 'axios';
 
 import { postss } from './postss';
 import styles from './HomeFollowing.module.scss';
@@ -64,9 +63,9 @@ function HomeFollowing() {
     // }, [followings]);
 
     const renderPost = useCallback(() => {
-        console.log(i.current);
+        // console.log(i.current);
         let j = i.current + 5;
-        console.log(j);
+        // console.log(j);
         const rs = [];
         for (i.current; i.current < j && i.current < postss.length; i.current++) {
             rs.push(<Post key={i.current} data={postss[i.current]} />);
@@ -74,8 +73,8 @@ function HomeFollowing() {
         if (rs.length === 0) {
             return;
         }
-        console.log(rs);
-        console.log(postShow);
+        // console.log(rs);
+        // console.log(postShow);
         setPostShow((postShow) => [...postShow, ...rs]);
         setLoading(false);
     }, []);
@@ -91,7 +90,7 @@ function HomeFollowing() {
         window.addEventListener('scroll', checkWindowEnd);
 
         return () => {
-            console.log('sthing');
+            // console.log('sthing');
             window.removeEventListener('scroll', checkWindowEnd);
         };
     }, [postShow]);

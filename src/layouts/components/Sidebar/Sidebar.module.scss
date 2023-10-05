@@ -70,9 +70,46 @@
         display: flex;
         justify-content: center;
 
-        .sidebarLogo {
-            padding: 24px 20px;
-            display: block;
+        .header-logo-cont {
+            padding: 24px 0px;
+
+            .logo-btn {
+                --icon-color-background: RGB(var(--navy));
+
+                display: block;
+                position: relative;
+                overflow: hidden;
+                height: 20px;
+
+                .sidebar-logo {}
+
+                &:hover .sidebar-logo {
+                    --icon-color-primary: transparent !important;
+                }
+
+                .colorful-bg-logo {
+                    will-change: transform;
+                    width: 300px;
+                    height: 300px;
+                    position: absolute;
+                    z-index: -1;
+                }
+
+                &:hover .colorful-bg-logo {
+                    background: repeating-linear-gradient(90deg, #d95e40 0%, #f2992e, #f7dd38, #56bc8a, #529ecc, #a77dc2, #d95e40 50%);
+                    animation: 1s linear infinite JqCkJ;
+                }
+
+                @keyframes JqCkJ {
+                    0% {
+                        transform: translate(-150px);
+                    }
+
+                    100% {
+                        transform: translate(0);
+                    }
+                }
+            }
         }
     }
 
