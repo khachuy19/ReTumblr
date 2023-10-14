@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import parse from 'html-react-parser';
 import HeadlessTippy from '@tippyjs/react/headless';
-import { useState } from 'react';
+import { useCallback, useState, useEffect } from 'react';
 
 import styles from './Post.module.scss';
 import Image from '../Image';
@@ -10,11 +10,31 @@ import { MoreIcon } from '../Icons';
 import Interact from '../Interact';
 import Blaze from '../Blaze';
 import Popover from '../Popover';
+import PostModal from '../PostModal';
 
 const cx = classNames.bind(styles);
 
 function Post({ data, hasFollow = false }) {
     const [showMore, setShowMore] = useState(false);
+    const [showModal, setShowModal] = useState(false);
+
+    const handleHideModal = useCallback(() => {
+        setShowModal(!showModal);
+    }, []);
+
+    useEffect(() => {
+        const handleKeyDown = (event) => {
+            if (event.key === 'Escape') {
+                setShowModal(false);
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [showModal]);
 
     return (
         <div className={cx('wrapper')}>
@@ -126,9 +146,14 @@ function Post({ data, hasFollow = false }) {
                         </div>
                     </header>
 
-                    <div className={cx('img')}>
-                        <a href={data.post_url}>
-                            {/* <Image className={cx('img')} src={images.userImg} /> */}
+                    <div className={cx('img-cont')}>
+                        <div
+                            className={cx('img')}
+                            onClick={() => {
+                                document.body.classList.toggle('has-modal');
+                                setShowModal(!showModal);
+                            }}
+                        >
                             {data.type === 'text' ? (
                                 data.body && parse(data.body.replace(/\\/g, ''))
                             ) : data.type === 'video' ? (
@@ -136,7 +161,8 @@ function Post({ data, hasFollow = false }) {
                             ) : (
                                 <Image className={cx('img')} src={data.photos[0].original_size.url} />
                             )}
-                        </a>
+                            {showModal && <PostModal data={data} handleHideModal={handleHideModal} />}
+                        </div>
                     </div>
 
                     <div className={cx('post-content')}>

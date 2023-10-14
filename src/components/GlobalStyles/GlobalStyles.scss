@@ -27,13 +27,7 @@
     --color-modal-close-button: rgb(var(--navy));
     --color-modal-close-button-background: rgb(var(--white-on-dark));
 
-    --font-family:
-        "Favorit",
-        "Helvetica Neue",
-        "HelveticaNeue",
-        Helvetica,
-        Arial,
-        sans-serif;
+    --font-family: 'Favorit', 'Helvetica Neue', 'HelveticaNeue', Helvetica, Arial, sans-serif;
 
     --border-radius-small: 3px;
 }
@@ -88,16 +82,22 @@ a {
 }
 
 // Fonts emmbeded
+// @font-face {
+//     font-family: Favorit;
+//     src: url('/assets/fonts/favorit-medium.woff2');
+//     font-weight: 500;
+// }
+
 @font-face {
     font-family: Favorit;
-    src: url('/assets/fonts/favorit-medium.woff2');
-    font-weight: 500;
+    src: url('/assets/fonts/favorit-85-cf2f6136.woff2');
+    font-weight: 400;
 }
 
 @font-face {
     font-family: Favorit;
-    src: url('/assets/fonts/FavoritLightC.woff2');
-    font-weight: 400;
+    src: url('/assets/fonts/favorit-medium-fbc7316f.woff2');
+    font-weight: 500;
 }
 
 // Custom tippy tooltip
@@ -137,8 +137,12 @@ body {
             }
         }
 
-        &+.npf_row {
+        & + .npf_row {
             margin-top: 6px;
         }
+    }
+
+    &.has-modal {
+        overflow: hidden;
     }
 }

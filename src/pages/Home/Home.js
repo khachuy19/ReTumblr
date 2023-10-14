@@ -23,7 +23,6 @@ import {
 import Search from '~/components/Search';
 import Checkout from '~/components/Checkout';
 import Radar from '~/components/Radar';
-import ToTop from '~/components/ToTop';
 
 const cx = classNames.bind(styles);
 
@@ -77,14 +76,14 @@ function Home({ children }) {
                         index={1}
                         onClick={handleClick}
                         to={config.routes.dashboardForYou}
-                        title="For You"
+                        title="For you"
                     />
                     <NavigationItem
                         selectedIndex={selectedIndex}
                         index={2}
                         onClick={handleClick}
                         to={config.routes.dashboardYourTags}
-                        title="Your Tags"
+                        title="Your tags"
                     />
                     <NavigationItem
                         selectedIndex={selectedIndex}
@@ -282,8 +281,6 @@ function Home({ children }) {
                         Help
                     </Link>
                 </footer>
-
-                {true && <ToTop />}
             </aside>
         </div>
     );

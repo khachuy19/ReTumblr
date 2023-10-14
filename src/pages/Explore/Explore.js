@@ -250,12 +250,6 @@ function Explore({ children }) {
                         Help
                     </Link>
                 </footer>
-
-                {true && (
-                    <button className={cx('to-top-btn')}>
-                        <ToTopIcon />
-                    </button>
-                )}
             </aside>
         </div>
     );

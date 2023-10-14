@@ -23,7 +23,7 @@
             padding-right: 8px;
 
             &:hover {
-                background-color: rgba(var(--white-on-dark), .07);
+                background-color: rgba(var(--white-on-dark), 0.07);
             }
 
             .checkout-popper {
@@ -38,7 +38,16 @@
                     .box-container {
                         .loading3 {
                             border-radius: inherit;
-                            background: linear-gradient(5deg, RGB(var(--green)), RGB(var(--blue)), RGB(var(--purple)), RGB(var(--red)), RGB(var(--pink)), RGB(var(--orange)), RGB(var(--yellow)));
+                            background: linear-gradient(
+                                5deg,
+                                RGB(var(--green)),
+                                RGB(var(--blue)),
+                                RGB(var(--purple)),
+                                RGB(var(--red)),
+                                RGB(var(--pink)),
+                                RGB(var(--orange)),
+                                RGB(var(--yellow))
+                            );
                             background-size: 250% 100%;
                             width: 100%;
                             height: 4px;
@@ -70,7 +79,7 @@
                             }
 
                             .box {
-                                background: rgba(var(--black), .13);
+                                background: rgba(var(--black), 0.13);
                                 border-radius: 3px;
                                 width: 69px;
                                 height: 30px;
@@ -171,11 +180,10 @@
                                         justify-content: center;
                                         align-items: center;
                                         border-radius: 50%;
-                                        animation: .35s ease-in-out wj3Ip;
+                                        animation: 0.35s ease-in-out wj3Ip;
                                     }
 
                                     @keyframes wj3Ip {
-
                                         0%,
                                         20% {
                                             transform: scale3d(0, 0, 0);
@@ -190,7 +198,6 @@
                                         width: 64px;
                                         height: 64px;
                                         border-radius: 50%;
-
                                     }
                                 }
                             }
@@ -200,7 +207,7 @@
                                 width: 100%;
 
                                 .heading {
-                                    font-family: "Sans Serif";
+                                    font-family: 'Sans Serif';
                                     font-weight: bold;
                                     color: var(--blog-title-color, rgb(68, 68, 68));
                                     font-size: 1.8rem;
@@ -237,7 +244,6 @@
                                     overflow: hidden;
                                 }
                             }
-
                         }
 
                         .recent-posts {
@@ -252,7 +258,7 @@
                                 width: 100%;
                                 height: 100%;
                                 margin: 0 5px;
-                                animation: .35s ease-in-out PFNjv;
+                                animation: 0.35s ease-in-out PFNjv;
                                 position: relative;
                                 overflow: hidden;
 
@@ -296,7 +302,7 @@
                     }
 
                     .blog-des {
-                        color: rgba(var(--white-on-dark), .65);
+                        color: rgba(var(--white-on-dark), 0.65);
                         -webkit-line-clamp: 1;
                         -webkit-box-orient: vertical;
                         display: -webkit-box;
@@ -312,7 +318,7 @@
                 min-width: 60px;
                 margin-right: 5px;
                 font: inherit;
-                font-weight: 500;
+                font-weight: 400;
                 line-height: 20px;
                 background: transparent;
                 color: rgb(var(--accent));
@@ -336,7 +342,7 @@
 
     .last-link {
         font: inherit;
-        font-weight: 500;
+        font-weight: 400;
         color: rgb(var(--accent));
         padding-left: 8px;
         margin-top: 12px;

@@ -15,6 +15,7 @@ function Button(
         outline = false,
         text = false,
         rounded = false,
+        active = false,
         disabled = false,
         small = false,
         large = false,
@@ -52,6 +53,7 @@ function Button(
 
     const classes = cx('wrapper', {
         [className]: className,
+        active,
         primary,
         outline,
         text,

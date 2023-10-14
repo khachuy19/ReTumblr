@@ -13,11 +13,11 @@
         color: var(--white-on-dark);
 
         &.active {
-            background-color: rgba(var(--white-on-dark), .07);
+            background-color: rgba(var(--white-on-dark), 0.07);
         }
 
         &:hover {
-            background-color: rgba(var(--white-on-dark), .2);
+            background-color: rgba(var(--white-on-dark), 0.2);
         }
     }
 
@@ -31,8 +31,8 @@
 
 .des {
     font-weight: 400;
-    font-size: 1.4rem;
-    color: rgba(var(--white-on-dark), .7);
+    font-size: 1.3rem;
+    color: rgba(var(--white-on-dark), 0.7);
 }
 
 .icon-left {

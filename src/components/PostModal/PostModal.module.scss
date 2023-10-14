@@ -1,0 +1,44 @@
+.post-modal {
+    // display: none;
+    z-index: 99999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+
+    .mdl-cls-btn {
+        position: absolute;
+        width: 48px;
+        height: 48px;
+        top: 10px;
+        left: 10px;
+        background-color: transparent;
+        user-select: none;
+    }
+
+    .modal-ctn {
+        transform: translateX(6px);
+        height: 100vh;
+        max-width: 524px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+
+        & p {
+            display: none;
+        }
+
+        img {
+            object-fit: contain !important;
+            max-height: 90vh !important;
+            box-shadow: 0 4px 30px #000;
+        }
+    }
+}

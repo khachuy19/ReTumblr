@@ -1,0 +1,17 @@
+.arrow {
+    width: 16px;
+    height: 16px;
+
+    &::after {
+        content: '';
+        pointer-events: none;
+        border: 8px solid transparent;
+        border-right-color: RGB(var(--white));
+        width: 0;
+        height: 0;
+        position: absolute;
+        border-left: none;
+        top: 0;
+        left: 0;
+    }
+}

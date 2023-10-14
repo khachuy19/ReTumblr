@@ -20,7 +20,6 @@
             flex-direction: column;
             position: relative;
 
-
             .sticky-container {
                 height: 100%;
                 position: absolute;
@@ -33,7 +32,7 @@
                     position: sticky;
                     position: -webkit-sticky;
                     top: calc(14px + var(--dashboard-tabs-header-height, 0px));
-                    transition: top .25s;
+                    transition: top 0.25s;
 
                     .avt {
                         width: 64px;
@@ -82,7 +81,6 @@
                                 text-decoration: underline;
                             }
                         }
-
                     }
                 }
 
@@ -98,7 +96,7 @@
                         border-radius: 50%;
 
                         &:hover {
-                            background-color: rgba(var(--black), .04);
+                            background-color: rgba(var(--black), 0.04);
                         }
                     }
 
@@ -112,7 +110,7 @@
                             font-size: 1.4rem;
                             font-weight: 500;
                             border-radius: 3px;
-                            box-shadow: 0 0 15px rgba(0, 0, 0, .5);
+                            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
                             transform: translateX(-50%);
 
                             .more-list {
@@ -123,8 +121,7 @@
                                 .two-lines {
                                     flex-direction: column;
                                     align-items: center;
-                                    border-bottom: 1px solid rgba(var(--black), .13);
-
+                                    border-bottom: 1px solid rgba(var(--black), 0.13);
                                 }
 
                                 .more-item {
@@ -152,28 +149,26 @@
                                         color: RGB(var(--red));
                                     }
 
-
                                     &:hover {
                                         background-color: RGB(var(--secondary-accent));
                                     }
                                 }
-
                             }
-
                         }
                     }
                 }
             }
 
-            .img {
+            .img-cont {
                 width: 100%;
+                min-width: 524px;
 
-                &>a {
+                .img {
                     display: flex;
                     flex-direction: column;
 
                     & p {
-                        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+                        font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
                         white-space: pre-wrap;
                         color: RGB(var(--black));
                         word-break: break-word;
@@ -225,7 +220,7 @@
                         word-break: break-word;
                         margin-top: 12px;
                         font-size: 1.5rem;
-                        color: rgba(var(--black), .65);
+                        color: rgba(var(--black), 0.65);
                         position: relative;
 
                         &:first-child {

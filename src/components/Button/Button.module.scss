@@ -12,7 +12,7 @@
     // border: 1px solid transparent;
     user-select: none;
 
-    +.wrapper {
+    + .wrapper {
         margin-left: 8px;
     }
 
@@ -25,7 +25,7 @@
         margin-left: 28px !important;
         width: 80%;
         justify-content: space-between;
-        border-bottom: 1px solid rgba(var(--white-on-dark), .13);
+        border-bottom: 1px solid rgba(var(--white-on-dark), 0.13);
         border-radius: 0;
     }
 
@@ -39,23 +39,23 @@
 
 .sidebar-nav-btn,
 .sidebar-nav-log-out-btn {
-    color: rgba(var(--white-on-dark), .65);
-    font-weight: 500;
+    color: rgba(var(--white-on-dark), 0.65);
+    font-weight: 400;
     width: 100%;
     justify-content: start;
     border-radius: 0;
 
-    +.wrapper {
+    + .wrapper {
         margin-left: 0;
     }
 
     &:hover {
-        background-color: rgba(var(--white-on-dark), .07);
+        background-color: rgba(var(--white-on-dark), 0.07);
     }
 
     .iconRight svg {
         transform: rotate(0);
-        transition: .2s ease-in-out;
+        transition: 0.2s ease-in-out;
     }
 
     &.active {
@@ -65,12 +65,10 @@
             transform: rotate(180deg);
         }
     }
-
 }
 
 .sidebar-nav-log-out-btn {
     padding-left: 28px;
-
 }
 
 .sidebar-footer-btn {
@@ -88,19 +86,18 @@
         margin-left: 8px !important;
     }
 
-    .iconLeft+.title,
-    .title+.iconLeft {
+    .iconLeft + .title,
+    .title + .iconLeft {
         margin-left: 8px;
     }
-
 }
 
 .logo-btn {
     padding: 0;
 }
 
-.iconLeft+.container,
-.container+.iconLeft {
+.iconLeft + .container,
+.container + .iconLeft {
     margin-left: 12px;
 }
 
@@ -109,7 +106,6 @@
     display: flex;
     text-align: center;
 }
-
 
 // Button types
 .rounded {
