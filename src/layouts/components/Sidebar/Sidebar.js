@@ -26,9 +26,17 @@ import {
     RoundHeartIcon,
     RoundReblogIcon,
     SmallTextIcon,
+    TextIcon,
+    CameraIcon,
+    QuoteIcon,
+    LinkIcon,
+    ChatIcon,
+    AudioIcon,
+    VideoIcon,
 } from '~/components/Icons';
 import images from '~/assets/images';
 import config from '~/config';
+import NewTxtPostMdl from '~/components/NewTxtPostMdl';
 
 const cx = classNames.bind(sidebarStyles);
 const cxx = classNames.bind(btnStyles);
@@ -38,16 +46,29 @@ function Sidebar() {
     const [showMessage, setShowMessage] = useState(false);
     const [showActivity, setShowActivity] = useState(false);
     const [selectedIndex, setSelectedIndex] = useState(0);
+    const [showCreModal, setShowCreModal] = useState(false);
+    const [showNewTxtPostCreaMdl, setShowNewTxtPostCreaMdl] = useState(false);
 
     const subnavRef = useRef();
     const contactList = useRef();
     const glassContainer = useRef();
+
+    const handleShowCreModal = () => {
+        document.body.classList.toggle('has-modal');
+        setShowCreModal(!showCreModal);
+    };
 
     const isLaptop = useMediaQuery({ query: '(min-width: 1224px)' });
 
     const handleToggleNavBar = () => {
         subnavRef.current.classList.toggle(cx('active'));
         subnavRef.current.previousElementSibling.classList.toggle(cxx('active'));
+    };
+
+    const handleNewTxtPostCreaClick = () => {
+        document.body.classList.toggle('has-modal');
+        setShowCreModal(!showCreModal);
+        setShowNewTxtPostCreaMdl(!showNewTxtPostCreaMdl);
     };
 
     const implementShaking = useCallback(() => {
@@ -551,9 +572,89 @@ function Sidebar() {
                 <div ref={glassContainer} id={cx('glass-container')}></div>
 
                 <footer className={cx('footer')}>
-                    <Button className={cx('sidebar-footer-btn')} leftIcon={<PenIcon />}>
+                    <button className={cx('sidebar-footer-btn')} onClick={handleShowCreModal}>
+                        <PenIcon />
                         Create
-                    </Button>
+                    </button>
+
+                    {showNewTxtPostCreaMdl && <NewTxtPostMdl onClick={handleNewTxtPostCreaClick} />}
+
+                    {showCreModal && (
+                        <div className={cx('create-modal')}>
+                            <button
+                                className={cx('mdl-btn')}
+                                onClick={() => {
+                                    document.body.classList.toggle('has-modal');
+                                    setShowCreModal(!showCreModal);
+                                }}
+                            ></button>
+
+                            <div className={cx('modal-actions')}>
+                                <div className={cx('action')}>
+                                    <button className={cx('act-btn')} onClick={handleNewTxtPostCreaClick}>
+                                        <div className={cx('icon-cont', 'cr-txt-btn')}>
+                                            <TextIcon />
+                                        </div>
+                                        Text
+                                    </button>
+                                </div>
+
+                                <div className={cx('action')}>
+                                    <button className={cx('act-btn')}>
+                                        <div className={cx('icon-cont', 'cr-pht-btn')}>
+                                            <CameraIcon />
+                                        </div>
+                                        Photo
+                                    </button>
+                                </div>
+
+                                <div className={cx('action')}>
+                                    <button className={cx('act-btn')}>
+                                        <div className={cx('icon-cont', 'cr-qot-btn')}>
+                                            <QuoteIcon />
+                                        </div>
+                                        Quote
+                                    </button>
+                                </div>
+
+                                <div className={cx('action')}>
+                                    <button className={cx('act-btn')}>
+                                        <div className={cx('icon-cont', 'cr-link-btn')}>
+                                            <LinkIcon />
+                                        </div>
+                                        Link
+                                    </button>
+                                </div>
+
+                                <div className={cx('action')}>
+                                    <button className={cx('act-btn')}>
+                                        <div className={cx('icon-cont', 'cr-cht-btn')}>
+                                            <ChatIcon />
+                                        </div>
+                                        Chat
+                                    </button>
+                                </div>
+
+                                <div className={cx('action')}>
+                                    <button className={cx('act-btn')}>
+                                        <div className={cx('icon-cont', 'cr-aud-btn')}>
+                                            <AudioIcon />
+                                        </div>
+                                        Audio
+                                    </button>
+                                </div>
+
+                                <div className={cx('action')}>
+                                    <button className={cx('act-btn')}>
+                                        <div className={cx('icon-cont', 'cr-vid-btn')}>
+                                            <VideoIcon />
+                                        </div>
+                                        Video
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    )}
                 </footer>
                 {/* <SuggestedAccounts label="Suggested accounts" />
             <SuggestedAccounts label="Following accounts" /> */}
@@ -563,30 +664,3 @@ function Sidebar() {
 }
 
 export default Sidebar;
-<HeadlessTippy
-    placement="right"
-    interactive
-    visible
-    render={(attrs) => (
-        <div className={cx('MessagePopper')} tabIndex="-1" {...attrs}>
-            <div className={cx('popper-wrapper')}>
-                <div className={cx('header-ms')}>
-                    <p className={cx('name')}>khachuy23</p>
-                    <button className={cx('new-ms-btn')}>New Message</button>
-                </div>
-
-                <div className={cx('body-ms')}>
-                    <SmileFaceMessageIcon />
-
-                    <h2>Talk to a Tumblr</h2>
-
-                    <div className={cx('contact-list')}>
-                        <button className={cx('start-conversation-btn')}>
-                            <Image src="https://64.media.tumblr.com/adf370716dbd463f5ff793b797180076/1b223b005b7db6f4-d7/s64x64u_c1/2fd4f32e40e7aa46670f09fc2b8d7c6e7bd6eef4.jpg" />
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    )}
-></HeadlessTippy>;

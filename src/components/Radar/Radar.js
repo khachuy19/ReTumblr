@@ -123,7 +123,7 @@ function Radar() {
                     <footer className={cx('foot')}>
                         <Blaze />
 
-                        <Interact reply={false} notes={199} />
+                        <Interact sPad hasReply={false} notes={199} />
                     </footer>
                 </article>
             </div>

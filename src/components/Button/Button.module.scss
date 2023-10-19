@@ -71,27 +71,6 @@
     padding-left: 28px;
 }
 
-.sidebar-footer-btn {
-    width: 100%;
-    background-color: RGB(var(--accent));
-    color: RGB(var(--navy));
-    font-weight: 500;
-    padding: 9px 16px;
-    border-radius: 40px;
-    justify-content: center;
-
-    .container {
-        flex: 0;
-        justify-content: center;
-        margin-left: 8px !important;
-    }
-
-    .iconLeft + .title,
-    .title + .iconLeft {
-        margin-left: 8px;
-    }
-}
-
 .logo-btn {
     padding: 0;
 }

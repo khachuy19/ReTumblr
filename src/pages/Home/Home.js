@@ -23,12 +23,14 @@ import {
 import Search from '~/components/Search';
 import Checkout from '~/components/Checkout';
 import Radar from '~/components/Radar';
+import NewTxtPostMdl from '~/components/NewTxtPostMdl';
 
 const cx = classNames.bind(styles);
 
 function Home({ children }) {
     const homeRef = useRef();
     const [selectedIndex, setSelectedIndex] = useState(0);
+    const [showNewTxtPost, setShowNewTxtPost] = useState(false);
 
     useEffect(() => {
         const homeComputedSt = getComputedStyle(homeRef.current);
@@ -58,6 +60,11 @@ function Home({ children }) {
 
     const handleClick = (i) => {
         setSelectedIndex(i);
+    };
+
+    const handleNewTxtPostCreaClick = () => {
+        document.body.classList.toggle('has-modal');
+        setShowNewTxtPost(!showNewTxtPost);
     };
 
     return (
@@ -192,18 +199,63 @@ function Home({ children }) {
                             <Image className={cx('img')} src={images.avt} />
                         </Link>
                     </HeadlessTippy>
+
                     <ul className={cx('action-list')}>
                         <li>
-                            <button className={cx('btn')}>
-                                <span className={cx('icon')}>
+                            <button className={cx('btn')} onClick={handleNewTxtPostCreaClick}>
+                                <span className={cx('icon', 'txt')}>
                                     <TextIcon />
                                 </span>
                                 Text
                             </button>
+
+                            {showNewTxtPost && <NewTxtPostMdl onClick={handleNewTxtPostCreaClick} />}
+
+                            {/* {showNewTxtPost && (
+                                <div className={cx('new-post-txt-mdl')}>
+                                    <div className={cx('wrapper')}>
+                                        <header className={cx('hd')}>
+                                            <span>khachuy23</span>
+                                        </header>
+
+                                        <Image
+                                            src="https://64.media.tumblr.com/8f2d065969ef09b6587bf193add026b3/bfc46daa84453fae-a8/s64x64u_c1/b3e0c6f30417cab97ca50dc4f7197ed972796f19.jpg"
+                                            className={cx('avt')}
+                                        />
+
+                                        <main className={cx('main-ctn')}>
+                                            <input type="text" className={cx('title')} placeholder="Title" />
+                                            <textarea
+                                                rows={50}
+                                                className={cx('ctn')}
+                                                placeholder="Go ahead, put anythings."
+                                            ></textarea>
+
+                                            <button className={cx('btn', 'main-ctn-btn')}>
+                                                #add tags to help people find your post
+                                            </button>
+                                        </main>
+
+                                        <footer className={cx('ftr')}>
+                                            <button
+                                                className={cx('btn', 'cls-btn')}
+                                                onClick={() => {
+                                                    document.body.classList.toggle('has-modal');
+                                                    setShowNewTxtPost(!showNewTxtPost);
+                                                }}
+                                            >
+                                                Close
+                                            </button>
+
+                                            <button className={cx('btn', 'post-btn')}>Post now</button>
+                                        </footer>
+                                    </div>
+                                </div>
+                            )} */}
                         </li>
                         <li>
                             <button className={cx('btn')}>
-                                <span className={cx('icon')}>
+                                <span className={cx('icon', 'camera')}>
                                     <CameraIcon />
                                 </span>
                                 Photo
@@ -211,7 +263,7 @@ function Home({ children }) {
                         </li>
                         <li>
                             <button className={cx('btn')}>
-                                <span className={cx('icon')}>
+                                <span className={cx('icon', 'quote')}>
                                     <QuoteIcon />
                                 </span>
                                 Quote
@@ -219,7 +271,7 @@ function Home({ children }) {
                         </li>
                         <li>
                             <button className={cx('btn')}>
-                                <span className={cx('icon')}>
+                                <span className={cx('icon', 'link-icon')}>
                                     <LinkIcon />
                                 </span>
                                 Link
@@ -227,7 +279,7 @@ function Home({ children }) {
                         </li>
                         <li>
                             <button className={cx('btn')}>
-                                <span className={cx('icon')}>
+                                <span className={cx('icon', 'chat')}>
                                     <ChatIcon />
                                 </span>
                                 Chat
@@ -235,7 +287,7 @@ function Home({ children }) {
                         </li>
                         <li>
                             <button className={cx('btn')}>
-                                <span className={cx('icon')}>
+                                <span className={cx('icon', 'audio')}>
                                     <AudioIcon />
                                 </span>
                                 Audio
@@ -243,7 +295,7 @@ function Home({ children }) {
                         </li>
                         <li>
                             <button className={cx('btn')}>
-                                <span className={cx('icon')}>
+                                <span className={cx('icon', 'video')}>
                                     <VideoIcon />
                                 </span>
                                 Video

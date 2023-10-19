@@ -253,7 +253,7 @@
                 text-align: center;
                 margin: 15px 0;
                 font-size: 2.1rem;
-                font-weight: 700;
+                font-weight: 500;
             }
 
             .contact-list {
@@ -419,6 +419,141 @@
     .footer {
         padding: 12px 16px;
         position: relative;
+
+        .sidebar-footer-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            background-color: RGB(var(--accent));
+            color: RGB(var(--navy));
+            font: inherit;
+            font-weight: 500;
+            padding: 9px 16px;
+            border-radius: 40px;
+        }
+
+        .create-modal {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 25, 53, 0.85);
+
+            .mdl-btn {
+                width: 100%;
+                height: 100vh;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: transparent;
+                z-index: -1;
+            }
+
+            @keyframes fadeIn {
+                0% {
+                    opacity: 0;
+                }
+                50% {
+                    opacity: 0.5;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+
+            .modal-actions {
+                display: flex;
+                gap: 30px;
+                flex-flow: row nowrap;
+                justify-content: space-between;
+                align-items: center;
+
+                .action {
+                    animation: 0.5s linear fadeIn;
+                }
+
+                .act-btn {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 8px;
+                    background-color: transparent;
+                    color: rgb(var(--white-on-dark));
+                    font: inherit;
+                    font-size: 1.8rem;
+
+                    &:hover .icon-cont {
+                        animation: 1s ease-in-out infinite BdLvX;
+                    }
+
+                    @keyframes BdLvX {
+                        0% {
+                            transform: scale(1.1);
+                        }
+                        30% {
+                            transform: scale(1.1) rotate(15deg);
+                        }
+                        60% {
+                            transform: scale(1.1) rotate(-15deg);
+                        }
+                        90% {
+                            transform: scale(1.1);
+                        }
+                        100% {
+                            transform: scale(1.1);
+                        }
+                    }
+
+                    .icon-cont {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100px;
+                        height: 100px;
+                        border-radius: 50%;
+                        color: rgb(var(--navy));
+
+                        & > svg {
+                            fill: rgb(var(--navy)) !important;
+                        }
+                    }
+
+                    .cr-txt-btn {
+                        background-color: rgb(var(--white-on-dark));
+                    }
+
+                    .cr-pht-btn {
+                        background-color: rgb(var(--red));
+                    }
+
+                    .cr-qot-btn {
+                        background-color: rgb(var(--orange));
+                    }
+
+                    .cr-link-btn {
+                        background-color: rgb(var(--green));
+                    }
+
+                    .cr-cht-btn {
+                        background-color: rgb(var(--blue));
+                    }
+
+                    .cr-aud-btn {
+                        background-color: rgb(var(--purple));
+                    }
+
+                    .cr-vid-btn {
+                        background-color: rgb(var(--pink));
+                    }
+                }
+            }
+        }
     }
 
     .footer::before {
