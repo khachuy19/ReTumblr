@@ -22,7 +22,6 @@ import Blaze from '../Blaze';
 import Popover from '../Popover';
 import PostModal from '../PostModal';
 import { flushSync } from 'react-dom';
-import { faL } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 
@@ -77,7 +76,8 @@ function Post({ data, hasFollow = false }) {
 
     useEffect(() => {
         const handleKeyDown = (event) => {
-            if (event.key === 'Escape') {
+            if (event.key === 'Escape' && showModal) {
+                document.body.classList.remove('has-modal');
                 setShowModal(false);
             }
         };
