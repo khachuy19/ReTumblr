@@ -17,10 +17,12 @@ function Explore({ children }) {
 
     useLayoutEffect(() => {
         window.addEventListener('scroll', () => {
-            if (exploreRef.current != null) {
+            if (exploreRef.current !== null) {
                 let exploreComputedSt = getComputedStyle(exploreRef.current);
+
                 if (window.scrollY >= 260 && window.oldScroll < window.scrollY) {
                     let offsetVal = exploreComputedSt.getPropertyValue('--offset');
+
                     if (offsetVal !== '53px') {
                         // console.log(offsetVal);
                         exploreRef.current.style.setProperty('--offset', '53px');
@@ -41,6 +43,7 @@ function Explore({ children }) {
                         }
                     }
                 }
+
                 window.oldScroll = window.scrollY;
             }
         });

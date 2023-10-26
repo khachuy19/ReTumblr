@@ -2,8 +2,8 @@
     --offset: 0px;
     --dashboard-tabs-header-height: 53px;
 
-    display: flex;
     flex: 1;
+    display: flex;
 
     .main-content {
         width: 67.5%;
@@ -228,6 +228,20 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
+        }
+    }
+}
+
+@media (max-width: 1059px) {
+    .wrapper {
+        justify-content: center;
+
+        .main-content {
+            width: 100%;
+        }
+
+        .sidebar {
+            display: none;
         }
     }
 }

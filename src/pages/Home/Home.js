@@ -2,6 +2,7 @@ import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import HeadlessTippy from '@tippyjs/react/headless';
+import MediaQuery from 'react-responsive';
 
 import styles from './Home.module.scss';
 import Image from '~/components/Image/Image';
@@ -92,248 +93,252 @@ function Home({ children }) {
                         to={config.routes.dashboardYourTags}
                         title="Your tags"
                     />
-                    <NavigationItem
+                    {/* <NavigationItem
                         selectedIndex={selectedIndex}
                         index={3}
                         onClick={handleClick}
                         to={config.routes.settingLabs}
                         title="Manage..."
-                    />
+                    /> */}
                 </Navigation>
 
-                <div className={cx('action-bar')}>
-                    <HeadlessTippy
-                        // onHide={handleMouseLeave}
-                        placement="bottom"
-                        interactive
-                        delay={[400, 200]}
-                        render={(attrs) => (
-                            <div
-                                className={cx('checkout-popper')}
-                                style={{ backgroundColor: '#256EA3' }}
-                                tabIndex="-1"
-                                {...attrs}
-                            >
-                                <div className={cx('popper-wrapper')}>
-                                    <main className={cx('main')}>
-                                        <Link to="/khachuy23" className={cx('popper-link')}>
-                                            <Image
-                                                src="https://64.media.tumblr.com/5009f0d63531633c8bf1898fd2e3f5a7/bfc46daa84453fae-9c/s2048x3072_c30082,0,95887,99683/67f023dab313a252c2ceab2494899a11576eb588.png"
-                                                className={cx('top-img')}
-                                            />
-                                        </Link>
-
-                                        <div className={cx('content')}>
-                                            <header className={cx('head')}>
-                                                <Link to="/ohsocozynights" className={cx('head-link')}>
-                                                    <div className={cx('text')}>ohsocozynights</div>
-                                                </Link>
-
-                                                <div className={cx('head-control')}>
-                                                    <button className={cx('setting-btn')}>
-                                                        <GearIcon />
-                                                    </button>
-
-                                                    <div className={cx('more-btn')}>
-                                                        <MoreIcon />
-                                                    </div>
-                                                </div>
-                                            </header>
-
-                                            <Link to="/ohsocozynights" className={cx('avt-link')}>
-                                                <div className={cx('img-wrapper')}>
-                                                    <div
-                                                        className={cx('img-round')}
-                                                        style={{ backgroundColor: '#256EA3' }}
-                                                    >
-                                                        <Image
-                                                            src="https://64.media.tumblr.com/8f2d065969ef09b6587bf193add026b3/bfc46daa84453fae-a8/s64x64u_c1/b3e0c6f30417cab97ca50dc4f7197ed972796f19.jpg"
-                                                            className={cx('avt')}
-                                                        />
-                                                    </div>
-                                                </div>
-                                            </Link>
-
-                                            <div
-                                                className={cx('title')}
-                                                style={{ '--blog-title-color': 'rgb(48, 79, 124)' }}
-                                            >
-                                                <h2
-                                                    className={cx('heading')}
-                                                    style={{
-                                                        fontFamily: 'Sans Serif',
-                                                        fontWeight: 'normal',
-                                                    }}
-                                                >
-                                                    Twenties
-                                                </h2>
-                                                <p className={cx('des')}></p>
-                                            </div>
-                                        </div>
-
-                                        <div className={cx('recent-posts')}>
-                                            <Link
-                                                to="https://www.tumblr.com/khachuy23/708677941767389184"
-                                                className={cx('post-link')}
-                                            >
+                <MediaQuery minWidth={1060}>
+                    <div className={cx('action-bar')}>
+                        <HeadlessTippy
+                            // onHide={handleMouseLeave}
+                            placement="bottom"
+                            interactive
+                            delay={[400, 200]}
+                            render={(attrs) => (
+                                <div
+                                    className={cx('checkout-popper')}
+                                    style={{ backgroundColor: '#256EA3' }}
+                                    tabIndex="-1"
+                                    {...attrs}
+                                >
+                                    <div className={cx('popper-wrapper')}>
+                                        <main className={cx('main')}>
+                                            <Link to="/khachuy23" className={cx('popper-link')}>
                                                 <Image
-                                                    src="https://64.media.tumblr.com/e3f0a3e0d0d19c79bbea0bec785f38bc/f9854d613d373f7a-15/s250x250_c1/1421ffa6b233fb2fd126000dc2743673296b9760.jpg"
-                                                    className={cx('post-img')}
+                                                    src="https://64.media.tumblr.com/5009f0d63531633c8bf1898fd2e3f5a7/bfc46daa84453fae-9c/s2048x3072_c30082,0,95887,99683/67f023dab313a252c2ceab2494899a11576eb588.png"
+                                                    className={cx('top-img')}
                                                 />
                                             </Link>
 
-                                            <Link to="https://www.tumblr.com/khachuy23" className={cx('post-link')}>
-                                                <Image src="" className={cx('post-img')} />
-                                            </Link>
+                                            <div className={cx('content')}>
+                                                <header className={cx('head')}>
+                                                    <Link to="/ohsocozynights" className={cx('head-link')}>
+                                                        <div className={cx('text')}>ohsocozynights</div>
+                                                    </Link>
 
-                                            <Link to="https://www.tumblr.com/khachuy23" className={cx('post-link')}>
-                                                <Image src="" className={cx('post-img')} />
-                                            </Link>
-                                        </div>
-                                    </main>
-                                </div>
-                            </div>
-                        )}
-                    >
-                        <Link to="/khachuy23" className={cx('link')}>
-                            <Image className={cx('img')} src={images.avt} />
-                        </Link>
-                    </HeadlessTippy>
+                                                    <div className={cx('head-control')}>
+                                                        <button className={cx('setting-btn')}>
+                                                            <GearIcon />
+                                                        </button>
 
-                    <ul className={cx('action-list')}>
-                        <li>
-                            <button className={cx('btn')} onClick={handleNewTxtPostCreaClick}>
-                                <span className={cx('icon', 'txt')}>
-                                    <TextIcon />
-                                </span>
-                                Text
-                            </button>
+                                                        <div className={cx('more-btn')}>
+                                                            <MoreIcon />
+                                                        </div>
+                                                    </div>
+                                                </header>
 
-                            {showNewTxtPost && <NewTxtPostMdl onClick={handleNewTxtPostCreaClick} />}
+                                                <Link to="/ohsocozynights" className={cx('avt-link')}>
+                                                    <div className={cx('img-wrapper')}>
+                                                        <div
+                                                            className={cx('img-round')}
+                                                            style={{ backgroundColor: '#256EA3' }}
+                                                        >
+                                                            <Image
+                                                                src="https://64.media.tumblr.com/8f2d065969ef09b6587bf193add026b3/bfc46daa84453fae-a8/s64x64u_c1/b3e0c6f30417cab97ca50dc4f7197ed972796f19.jpg"
+                                                                className={cx('avt')}
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                </Link>
 
-                            {/* {showNewTxtPost && (
-                                <div className={cx('new-post-txt-mdl')}>
-                                    <div className={cx('wrapper')}>
-                                        <header className={cx('hd')}>
-                                            <span>khachuy23</span>
-                                        </header>
+                                                <div
+                                                    className={cx('title')}
+                                                    style={{ '--blog-title-color': 'rgb(48, 79, 124)' }}
+                                                >
+                                                    <h2
+                                                        className={cx('heading')}
+                                                        style={{
+                                                            fontFamily: 'Sans Serif',
+                                                            fontWeight: 'normal',
+                                                        }}
+                                                    >
+                                                        Twenties
+                                                    </h2>
+                                                    <p className={cx('des')}></p>
+                                                </div>
+                                            </div>
 
-                                        <Image
-                                            src="https://64.media.tumblr.com/8f2d065969ef09b6587bf193add026b3/bfc46daa84453fae-a8/s64x64u_c1/b3e0c6f30417cab97ca50dc4f7197ed972796f19.jpg"
-                                            className={cx('avt')}
-                                        />
+                                            <div className={cx('recent-posts')}>
+                                                <Link
+                                                    to="https://www.tumblr.com/khachuy23/708677941767389184"
+                                                    className={cx('post-link')}
+                                                >
+                                                    <Image
+                                                        src="https://64.media.tumblr.com/e3f0a3e0d0d19c79bbea0bec785f38bc/f9854d613d373f7a-15/s250x250_c1/1421ffa6b233fb2fd126000dc2743673296b9760.jpg"
+                                                        className={cx('post-img')}
+                                                    />
+                                                </Link>
 
-                                        <main className={cx('main-ctn')}>
-                                            <input type="text" className={cx('title')} placeholder="Title" />
-                                            <textarea
-                                                rows={50}
-                                                className={cx('ctn')}
-                                                placeholder="Go ahead, put anythings."
-                                            ></textarea>
+                                                <Link to="https://www.tumblr.com/khachuy23" className={cx('post-link')}>
+                                                    <Image src="" className={cx('post-img')} />
+                                                </Link>
 
-                                            <button className={cx('btn', 'main-ctn-btn')}>
-                                                #add tags to help people find your post
-                                            </button>
+                                                <Link to="https://www.tumblr.com/khachuy23" className={cx('post-link')}>
+                                                    <Image src="" className={cx('post-img')} />
+                                                </Link>
+                                            </div>
                                         </main>
-
-                                        <footer className={cx('ftr')}>
-                                            <button
-                                                className={cx('btn', 'cls-btn')}
-                                                onClick={() => {
-                                                    document.body.classList.toggle('has-modal');
-                                                    setShowNewTxtPost(!showNewTxtPost);
-                                                }}
-                                            >
-                                                Close
-                                            </button>
-
-                                            <button className={cx('btn', 'post-btn')}>Post now</button>
-                                        </footer>
                                     </div>
                                 </div>
-                            )} */}
-                        </li>
-                        <li>
-                            <button className={cx('btn')}>
-                                <span className={cx('icon', 'camera')}>
-                                    <CameraIcon />
-                                </span>
-                                Photo
-                            </button>
-                        </li>
-                        <li>
-                            <button className={cx('btn')}>
-                                <span className={cx('icon', 'quote')}>
-                                    <QuoteIcon />
-                                </span>
-                                Quote
-                            </button>
-                        </li>
-                        <li>
-                            <button className={cx('btn')}>
-                                <span className={cx('icon', 'link-icon')}>
-                                    <LinkIcon />
-                                </span>
-                                Link
-                            </button>
-                        </li>
-                        <li>
-                            <button className={cx('btn')}>
-                                <span className={cx('icon', 'chat')}>
-                                    <ChatIcon />
-                                </span>
-                                Chat
-                            </button>
-                        </li>
-                        <li>
-                            <button className={cx('btn')}>
-                                <span className={cx('icon', 'audio')}>
-                                    <AudioIcon />
-                                </span>
-                                Audio
-                            </button>
-                        </li>
-                        <li>
-                            <button className={cx('btn')}>
-                                <span className={cx('icon', 'video')}>
-                                    <VideoIcon />
-                                </span>
-                                Video
-                            </button>
-                        </li>
-                    </ul>
-                </div>
+                            )}
+                        >
+                            <Link to="/khachuy23" className={cx('link')}>
+                                <Image className={cx('img')} src={images.avt} />
+                            </Link>
+                        </HeadlessTippy>
+
+                        <ul className={cx('action-list')}>
+                            <li>
+                                <button className={cx('btn')} onClick={handleNewTxtPostCreaClick}>
+                                    <span className={cx('icon', 'txt')}>
+                                        <TextIcon />
+                                    </span>
+                                    Text
+                                </button>
+
+                                {showNewTxtPost && <NewTxtPostMdl onClick={handleNewTxtPostCreaClick} />}
+
+                                {/* {showNewTxtPost && (
+                                    <div className={cx('new-post-txt-mdl')}>
+                                        <div className={cx('wrapper')}>
+                                            <header className={cx('hd')}>
+                                                <span>khachuy23</span>
+                                            </header>
+    
+                                            <Image
+                                                src="https://64.media.tumblr.com/8f2d065969ef09b6587bf193add026b3/bfc46daa84453fae-a8/s64x64u_c1/b3e0c6f30417cab97ca50dc4f7197ed972796f19.jpg"
+                                                className={cx('avt')}
+                                            />
+    
+                                            <main className={cx('main-ctn')}>
+                                                <input type="text" className={cx('title')} placeholder="Title" />
+                                                <textarea
+                                                    rows={50}
+                                                    className={cx('ctn')}
+                                                    placeholder="Go ahead, put anythings."
+                                                ></textarea>
+    
+                                                <button className={cx('btn', 'main-ctn-btn')}>
+                                                    #add tags to help people find your post
+                                                </button>
+                                            </main>
+    
+                                            <footer className={cx('ftr')}>
+                                                <button
+                                                    className={cx('btn', 'cls-btn')}
+                                                    onClick={() => {
+                                                        document.body.classList.toggle('has-modal');
+                                                        setShowNewTxtPost(!showNewTxtPost);
+                                                    }}
+                                                >
+                                                    Close
+                                                </button>
+    
+                                                <button className={cx('btn', 'post-btn')}>Post now</button>
+                                            </footer>
+                                        </div>
+                                    </div>
+                                )} */}
+                            </li>
+                            <li>
+                                <button className={cx('btn')}>
+                                    <span className={cx('icon', 'camera')}>
+                                        <CameraIcon />
+                                    </span>
+                                    Photo
+                                </button>
+                            </li>
+                            <li>
+                                <button className={cx('btn')}>
+                                    <span className={cx('icon', 'quote')}>
+                                        <QuoteIcon />
+                                    </span>
+                                    Quote
+                                </button>
+                            </li>
+                            <li>
+                                <button className={cx('btn')}>
+                                    <span className={cx('icon', 'link-icon')}>
+                                        <LinkIcon />
+                                    </span>
+                                    Link
+                                </button>
+                            </li>
+                            <li>
+                                <button className={cx('btn')}>
+                                    <span className={cx('icon', 'chat')}>
+                                        <ChatIcon />
+                                    </span>
+                                    Chat
+                                </button>
+                            </li>
+                            <li>
+                                <button className={cx('btn')}>
+                                    <span className={cx('icon', 'audio')}>
+                                        <AudioIcon />
+                                    </span>
+                                    Audio
+                                </button>
+                            </li>
+                            <li>
+                                <button className={cx('btn')}>
+                                    <span className={cx('icon', 'video')}>
+                                        <VideoIcon />
+                                    </span>
+                                    Video
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </MediaQuery>
 
                 {children}
             </div>
 
-            <aside className={cx('sidebar')}>
-                <Search />
+            <MediaQuery minWidth={1060}>
+                <aside className={cx('sidebar')}>
+                    <Search />
 
-                <Checkout />
+                    <Checkout />
 
-                <Radar />
+                    <Radar />
 
-                <div className={cx('hidden-box')}></div>
+                    <div className={cx('hidden-box')}></div>
 
-                <footer className={cx('footer')}>
-                    <Link to="/about" className={cx('footer-link')}>
-                        About
-                    </Link>
-                    <Link to="/apps" className={cx('footer-link')}>
-                        Apps
-                    </Link>
-                    <Link to="/policy" className={cx('footer-link')}>
-                        Legal
-                    </Link>
-                    <Link to="/policy" className={cx('footer-link')}>
-                        Privacy
-                    </Link>
-                    <Link to="/help" className={cx('footer-link')}>
-                        Help
-                    </Link>
-                </footer>
-            </aside>
+                    <footer className={cx('footer')}>
+                        <Link to="/about" className={cx('footer-link')}>
+                            About
+                        </Link>
+                        <Link to="/apps" className={cx('footer-link')}>
+                            Apps
+                        </Link>
+                        <Link to="/policy" className={cx('footer-link')}>
+                            Legal
+                        </Link>
+                        <Link to="/policy" className={cx('footer-link')}>
+                            Privacy
+                        </Link>
+                        <Link to="/help" className={cx('footer-link')}>
+                            Help
+                        </Link>
+                    </footer>
+                </aside>
+            </MediaQuery>
         </div>
     );
 }

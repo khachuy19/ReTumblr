@@ -1,7 +1,6 @@
 import classNames from 'classnames/bind';
 
 import styles from './ExploreForYou.module.scss';
-import Post from '~/components/Post';
 import Progress from '~/components/Progress';
 
 const cx = classNames.bind(styles);

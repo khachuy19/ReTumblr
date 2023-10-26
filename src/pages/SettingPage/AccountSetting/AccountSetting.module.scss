@@ -149,6 +149,12 @@
                 flex-flow: row nowrap;
             }
 
+            @media (max-width: 1059px) {
+                .top {
+                    flex-flow: row wrap;
+                }
+            }
+
             .month-p,
             .day-p,
             .year-p {
@@ -175,6 +181,12 @@
                 }
             }
 
+            @media (max-width: 420px) {
+                .btn {
+                    margin-left: 0;
+                }
+            }
+
             .caret-icon {
                 position: absolute;
                 height: 100%;
@@ -196,6 +208,18 @@
                 span a {
                     text-decoration: underline;
                 }
+            }
+        }
+    }
+}
+
+@media (max-width: 1059px) {
+    .wrapper {
+        margin: 44px 20px;
+
+        .settings {
+            .setting-item {
+                flex-direction: column;
             }
         }
     }

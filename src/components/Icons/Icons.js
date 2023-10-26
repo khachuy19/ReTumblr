@@ -33,6 +33,19 @@ export const LogoIcon = ({ width = '9.8rem', height = '2rem', className }) => (
     </svg>
 );
 
+export const ShortLogoIcon = ({ width = '2.1rem', height = '3.68rem', className }) => (
+    <svg className={className} width={width} height={height} viewBox="0 0 21 36.8" xmlns="http://www.w3.org/2000/svg">
+        <path
+            fill="var(--icon-color-background)"
+            d="m-1.4238-1.1035v39.006h23.939v-39.006h-23.939zm9.6016 1.1035h5.7891v9.3535h6.7578v6.8574h-6.7559v9.4844c0 2.843 1.447 3.8262 3.752 3.8262h3.2715l0.007812 7.2285h-6.1992c-5.577 0-9.7344-2.8445-9.7344-9.6465v-10.893h-5.0664v-5.9004c5.576-1.434 7.9097-6.1906 8.1777-10.311z"
+        ></path>
+        <path
+            fill="var(--icon-color-primary, currentcolor)"
+            d="M21 36.75h-6.2c-5.577 0-9.733-2.844-9.733-9.646V16.21H0v-5.9C5.576 8.876 7.909 4.12 8.177 0h5.79v9.354h6.757v6.856h-6.756v9.486c0 2.843 1.448 3.826 3.753 3.826h3.271L21 36.75z"
+        ></path>
+    </svg>
+);
+
 export const GearIcon = ({ width = '2.4rem', height = '2.4rem', className }) => (
     <svg className={className} width={width} height={height} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -797,6 +810,32 @@ export const CloseIcon12 = ({ width = '1.2rem', height = '1.2rem', className }) 
         </defs>
         <g>
             <path d="M11.68.32a1.095 1.095 0 0 1 0 1.55L7.548 6l4.13 4.13a1.095 1.095 0 1 1-1.549 1.55L6 7.548l-4.13 4.13A1.095 1.095 0 1 1 .32 10.13L4.452 6 .321 1.87A1.095 1.095 0 1 1 1.87.32L6 4.452l4.13-4.13a1.095 1.095 0 0 1 1.55 0z"></path>
+        </g>
+    </svg>
+);
+
+export const CloseIcon18 = ({ width = '1.8rem', height = '1.8rem', className }) => (
+    <svg
+        className={className}
+        width={width}
+        height={height}
+        fill="var(--icon-color-primary, currentcolor)"
+        viewBox="0 0 16 16"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <defs>
+            <svg id="managed-icon__close-thin" fill="var(--icon-color-primary, #ffffff)" viewBox="0 0 16 16">
+                <path
+                    d="M9.527 8l6.164-6.188a1.066 1.066 0 0 0 0-1.5 1.053 1.053 0 0 0-1.495 0L8 6.531 1.805.311a1.053 1.053 0 0 0-1.495 0 1.064 1.064 0 0 0 0 1.5L6.473 8 .31 14.188a1.064 1.064 0 0 0 0 1.501 1.052 1.052 0 0 0 1.495 0L8 9.47l6.195 6.22a1.052 1.052 0 0 0 1.495 0 1.066 1.066 0 0 0 0-1.5L9.527 8z"
+                    fill="currentColor"
+                ></path>
+            </svg>
+        </defs>
+        <g>
+            <path
+                d="M9.527 8l6.164-6.188a1.066 1.066 0 0 0 0-1.5 1.053 1.053 0 0 0-1.495 0L8 6.531 1.805.311a1.053 1.053 0 0 0-1.495 0 1.064 1.064 0 0 0 0 1.5L6.473 8 .31 14.188a1.064 1.064 0 0 0 0 1.501 1.052 1.052 0 0 0 1.495 0L8 9.47l6.195 6.22a1.052 1.052 0 0 0 1.495 0 1.066 1.066 0 0 0 0-1.5L9.527 8z"
+                fill="currentColor"
+            ></path>
         </g>
     </svg>
 );

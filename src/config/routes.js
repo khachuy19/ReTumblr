@@ -10,6 +10,8 @@ const routes = {
     exploreTrending: '/explore/trending',
     exploreStaffPicks: '/explore/staff-picks',
     exploreAnswertime: '/explore/answertime',
+    activity: '/activity',
+    messages: '/messages',
     profile: '/@:nickname',
     inbox: '/inbox',
     likes: '/likes',

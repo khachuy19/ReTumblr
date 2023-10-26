@@ -141,7 +141,7 @@ function AccountSetting() {
 
                 <li className={cx('setting-item')}>
                     <span className={cx('name')}>Language</span>
-                    <span className={cx('info')}>
+                    <span className={cx('info')} style={{ maxWidth: '121px' }}>
                         <select className={cx('language-select')}>
                             <option value="en_US">English</option>
                             <option value="de_DE">Deutsch</option>

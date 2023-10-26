@@ -5,13 +5,11 @@
     .main-content {
         width: 67.5%;
         max-width: 666px;
-
     }
 
     .sidebar {
         flex: 1;
-        border-left: 1px solid rgba(var(--white-on-dark), .13);
-
+        border-left: 1px solid rgba(var(--white-on-dark), 0.13);
 
         .hidden-box {
             min-height: 100vh;
@@ -45,10 +43,24 @@
             background: RGB(var(--navy));
             border-radius: 3px;
             padding: 4px 5px 1px;
-            transition: opacity .4s;
+            transition: opacity 0.4s;
             position: fixed;
             bottom: 20px;
             right: 20px;
         }
+    }
+}
+
+@media (max-width: 1059px) {
+    .wrapper {
+        justify-content: center;
+
+        .main-content {
+            width: 100%;
+        }
+    }
+
+    .sidebar {
+        display: none;
     }
 }

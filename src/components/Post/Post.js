@@ -3,6 +3,7 @@ import classNames from 'classnames/bind';
 import parse from 'html-react-parser';
 import HeadlessTippy from '@tippyjs/react/headless';
 import { useCallback, useState, useEffect, useRef } from 'react';
+import MediaQuery from 'react-responsive';
 
 import styles from './Post.module.scss';
 import Image from '../Image';
@@ -36,6 +37,8 @@ function Post({ data, hasFollow = false }) {
     const [morSubMenuI, setMorSubMenuI] = useState(undefined);
     const [showOrdMenu, setShowOrdMenu] = useState(false);
     const [ordSelected, setOrdSelected] = useState(0);
+    const [like, setLike] = useState(false);
+    const [noteCount, setNoteCount] = useState(data.note_count);
 
     const txtRef = useRef();
 
@@ -64,6 +67,16 @@ function Post({ data, hasFollow = false }) {
             setReplies(replies);
             setShowReplySubMenu(!showReplySubMenu);
         });
+    };
+
+    const handleLike = () => {
+        setLike((like) => !like);
+        setNoteCount((current) => current + 1);
+    };
+
+    const handleDLike = () => {
+        setLike((like) => !like);
+        setNoteCount((current) => current - 1);
     };
 
     const handleShowOrdMenu = () => {
@@ -108,19 +121,22 @@ function Post({ data, hasFollow = false }) {
     return (
         <div className={cx('wrapper')}>
             <div className={cx('container')}>
-                <div className={cx('empty-box')}></div>
-
+                <MediaQuery minWidth={1060}>
+                    <div className={cx('empty-box')}></div>
+                </MediaQuery>
                 <article className={cx('card')}>
-                    <div className={cx('sticky-container')}>
-                        <Popover data={data}>
-                            <Link to={`/${data.blog_name}`} className={cx('avt-link')}>
-                                <Image
-                                    src={data.trail[0]?.blog?.theme.header_image ?? data.photos[0].alt_sizes[0].url}
-                                    className={cx('avt')}
-                                />
-                            </Link>
-                        </Popover>
-                    </div>
+                    <MediaQuery minWidth={1060}>
+                        <div className={cx('sticky-container')}>
+                            <Popover data={data}>
+                                <Link to={`/${data.blog_name}`} className={cx('avt-link')}>
+                                    <Image
+                                        src={data.trail[0]?.blog?.theme.header_image ?? data.photos[0].alt_sizes[0].url}
+                                        className={cx('avt')}
+                                    />
+                                </Link>
+                            </Popover>
+                        </div>
+                    </MediaQuery>
 
                     <header className={cx('head')}>
                         <div className={cx('action')}>
@@ -135,7 +151,18 @@ function Post({ data, hasFollow = false }) {
                             <div className={cx('more')}>
                                 <HeadlessTippy
                                     placement="bottom"
-                                    offset={[125, 10]}
+                                    offset={[36, 10]}
+                                    popperOptions={{
+                                        modifiers: [
+                                            {
+                                                name: 'preventOverflow',
+                                                options: {
+                                                    mainAxis: false, // true by default
+                                                    // altAxis: true,
+                                                },
+                                            },
+                                        ],
+                                    }}
                                     interactive
                                     visible={showMore}
                                     onClickOutside={() => setShowMore(!showMore)}
@@ -252,8 +279,11 @@ function Post({ data, hasFollow = false }) {
                         {data.can_blaze && <Blaze />}
                         <Interact
                             showReplySec={showReplySec}
-                            notes={data.note_count}
+                            notes={noteCount}
+                            isLiked={like}
                             onReplyClick={handleSHowReplySec}
+                            handleLike={handleLike}
+                            handleDLike={handleDLike}
                         />
                     </footer>
 
@@ -286,7 +316,7 @@ function Post({ data, hasFollow = false }) {
                                         >
                                             <LikeIcon className={cx('l-icon')} />
 
-                                            {data.note_count}
+                                            {noteCount}
                                         </button>
                                     </li>
                                 </ul>

@@ -4,6 +4,11 @@
     .progress-container {
         position: relative;
         height: 100px;
-        margin-left: 84px;
+    }
+}
+
+@media (max-width: 1059px) {
+    .wrapper {
+        margin: 60px 0 0;
     }
 }

@@ -1,9 +1,10 @@
 .wrapper {
-    @mixin post-padding($post-padding: 20px) {
-        margin: 0 $post-padding;
-    }
+    // @mixin post-padding($post-padding: 20px) {
+    //     margin: 0 $post-padding;
+    // }
 
-    @include post-padding(20px);
+    // @include post-padding(20px);
+
     padding: 12px 0;
     width: 100%;
     display: flex;
@@ -11,10 +12,6 @@
     align-items: center;
     justify-content: space-between;
     border-top: 1px solid rgba(var(--black), 0.13);
-
-    &.s-pad {
-        @include post-padding(10px);
-    }
 
     .note-btn {
         background: transparent;
@@ -35,6 +32,12 @@
             font-weight: 400;
             font-size: 1.7rem;
             line-height: 1.4;
+        }
+    }
+
+    @media (max-width: 300px) {
+        .note-btn {
+            display: none;
         }
     }
 
@@ -87,5 +90,11 @@
             height: 100%;
             background-color: transparent;
         }
+    }
+}
+
+@media (max-width: 300px) {
+    .wrapper {
+        justify-content: center;
     }
 }

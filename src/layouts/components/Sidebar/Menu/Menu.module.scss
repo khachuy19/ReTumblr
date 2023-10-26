@@ -26,3 +26,19 @@
 .icon-left {
     display: flex;
 }
+
+@media (min-width: 1060px) and (max-width: 1200px) {
+    .nav {
+        .menu-item {
+            flex-direction: column;
+            gap: 4px;
+            padding: 8px;
+            margin-left: 0;
+        }
+    }
+
+    .title {
+        font-size: 1.2rem;
+        margin-left: 0;
+    }
+}

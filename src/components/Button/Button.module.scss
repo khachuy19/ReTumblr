@@ -135,3 +135,29 @@
     padding: 14px 16px;
     min-width: 140px;
 }
+
+@media (min-width: 1060px) and (max-width: 1200px) {
+    .wrapper {
+        padding: 8px;
+        max-width: 91px;
+        min-width: unset;
+
+        .container {
+            margin-left: 0;
+
+            .title {
+                font-size: 1.2rem;
+            }
+        }
+    }
+    .sidebar-nav-btn {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .iconRight {
+        svg {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,81 @@
+.ms-popper-wrapper {
+    width: 100%;
+
+    .header-ms {
+        display: flex;
+        justify-content: space-between;
+        padding: 12px;
+        border-bottom: solid 1px rgba(var(--black), 0.13);
+
+        .name {
+            font-weight: 500;
+            font-size: 1.4rem;
+        }
+        .new-ms-btn {
+            font-weight: 500;
+            font-size: 1.25rem;
+            color: RGB(var(--accent));
+            background-color: transparent;
+        }
+    }
+
+    @media (max-width: 1059px) {
+        .header-ms {
+            background: RGB(var(--navy));
+        }
+    }
+
+    .body-ms {
+        --icon-color-primary: rgba(var(--black), 0.65);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 10px;
+
+        h2 {
+            color: rgba(var(--black), 0.65);
+            text-align: center;
+            margin: 15px 0;
+            font-size: 2.1rem;
+            font-weight: 500;
+        }
+
+        .contact-list {
+            grid-gap: 10px;
+            grid-template-rows: repeat(2, 35px);
+            grid-template-columns: repeat(4, 35px);
+            display: grid;
+
+            .start-conversation-btn {
+                width: 35px;
+                height: 35px;
+                border-radius: 3px;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                }
+            }
+            .shake-conversation-btn {
+                animation: 0.3s shake;
+            }
+
+            @keyframes shake {
+                0% {
+                    transform: rotate(0);
+                }
+
+                25% {
+                    transform: rotate(10deg);
+                }
+                75% {
+                    transform: rotate(-10deg);
+                }
+                100% {
+                    transform: rotate(0);
+                }
+            }
+        }
+    }
+}

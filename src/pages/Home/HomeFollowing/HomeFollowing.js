@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef, useCallback } from 'react';
 import classNames from 'classnames/bind';
+import { useMediaQuery } from 'react-responsive';
 
 import { postss } from './postss';
 import styles from './HomeFollowing.module.scss';
@@ -16,6 +17,8 @@ function HomeFollowing() {
     const [loading, setLoading] = useState(true);
 
     let i = useRef(0);
+
+    const isntPC = useMediaQuery({ maxWidth: 1059 });
 
     // useEffect(() => {
     //     const fetchFollowingAPI = async () => {

@@ -44,6 +44,8 @@ html {
 }
 
 body {
+    --post-padding: 20px;
+
     font-family: var(--font-family);
     font-size: 1.6rem;
     line-height: 1.5;
@@ -102,8 +104,6 @@ a {
 
 // Custom tippy tooltip
 body {
-    --post-padding: 20px;
-
     .tippy-box {
         border-radius: 8px;
         font-weight: 500;
@@ -144,5 +144,11 @@ body {
 
     &.has-modal {
         overflow: hidden;
+    }
+}
+
+@media (max-width: 541px) {
+    body {
+        --post-padding: 10px;
     }
 }

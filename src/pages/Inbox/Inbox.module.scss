@@ -3,14 +3,14 @@
     flex: 1;
 
     .main-content {
-        width: 67.5%;
+        width: 69.5%;
         max-width: 666px;
         padding: 14px 20px;
 
         .inbox-container {
             border-radius: 3px;
-            background-color: rgba(var(--white-on-dark), .07);
-            color: rgba(var(--white-on-dark), .65);
+            background-color: rgba(var(--white-on-dark), 0.07);
+            color: rgba(var(--white-on-dark), 0.65);
             text-align: center;
             font-family: var(--font-family);
             border-radius: 3px;
@@ -25,12 +25,11 @@
 
             .top-parag {
                 font-size: 2.1rem;
-
             }
 
             .bottom-parag {
                 font-size: 1.6rem;
-                color: rgba(var(--white-on-dark), .4);
+                color: rgba(var(--white-on-dark), 0.4);
             }
         }
     }
@@ -38,7 +37,7 @@
     .sidebar {
         min-height: 100vh;
         flex: 1;
-        border-left: 1px solid rgba(var(--white-on-dark), .13);
+        border-left: 1px solid rgba(var(--white-on-dark), 0.13);
 
         .links {
             display: flex;
@@ -55,17 +54,17 @@
                 font-size: 1.8rem;
 
                 &.active {
-                    background: rgba(var(--white-on-dark), .07);
+                    background: rgba(var(--white-on-dark), 0.07);
                 }
 
                 &:hover {
-                    background: rgba(var(--white-on-dark), .07);
+                    background: rgba(var(--white-on-dark), 0.07);
                 }
             }
         }
 
         .instruct {
-            background: rgba(var(--white-on-dark), .07);
+            background: rgba(var(--white-on-dark), 0.07);
             color: RGB(var(--white-on-dark));
             margin-top: 12px;
             padding: 12px;
@@ -91,5 +90,19 @@
                 font-weight: 500;
             }
         }
+    }
+}
+
+@media (max-width: 1059px) {
+    .wrapper {
+        justify-content: center;
+
+        .main-content {
+            width: 100%;
+        }
+    }
+
+    .sidebar {
+        display: none;
     }
 }

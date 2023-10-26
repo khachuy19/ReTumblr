@@ -10,6 +10,9 @@ import ExploreToday from '~/pages/Explore/ExploreToday';
 import ExploreTrending from '~/pages/Explore/ExploreTrending';
 import ExploreForYou from '~/pages/Explore/ExploreForYou';
 import ExploreStaffPick from '~/pages/Explore/ExploreStaffPick';
+import ExploreAnswerTime from '~/pages/Explore/ExploreAnswerTime';
+import Activity from '~/pages/Activity';
+import MessagesPage from '~/pages/MessagesPage';
 import Profile from '~/pages/Profile';
 import Inbox from '~/pages/Inbox';
 import Likes from '~/pages/Likes';
@@ -18,8 +21,8 @@ import Blog from '~/pages/Blog';
 import SettingPage from '~/pages/SettingPage';
 import AccountSetting from '~/pages/SettingPage/AccountSetting';
 import Domain from '~/pages/Domain';
+import AdFree from '~/pages/AdFree';
 import Search from '~/pages/Search';
-import ExploreAnswerTime from '~/pages/Explore/ExploreAnswerTime';
 
 // Public routes
 const publicRoutes = [
@@ -34,6 +37,8 @@ const publicRoutes = [
     { path: config.routes.exploreForYou, component: Explore, subComponent: ExploreForYou },
     { path: config.routes.exploreStaffPicks, component: Explore, subComponent: ExploreStaffPick },
     { path: config.routes.exploreAnswertime, component: Explore, subComponent: ExploreAnswerTime },
+    { path: config.routes.activity, component: Activity },
+    { path: config.routes.messages, component: MessagesPage },
     { path: config.routes.profile, component: Profile },
     { path: config.routes.inbox, component: Inbox },
     { path: config.routes.likes, component: Likes },
@@ -52,6 +57,7 @@ const publicRoutes = [
     { path: config.routes.settingLabs, component: SettingPage, subComponent: AccountSetting },
     { path: config.routes.settingGifts, component: SettingPage, subComponent: AccountSetting },
     { path: config.routes.domain, component: Domain },
+    { path: config.routes.adFree, component: AdFree },
     { path: config.routes.search, component: Search, layout: null },
 ];
 

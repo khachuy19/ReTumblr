@@ -14,6 +14,18 @@ const cx = classNames.bind(styles);
 
 function Radar() {
     const [showMore, setShowMore] = useState(false);
+    const [like, setLike] = useState(false);
+    const [noteCount, setNoteCount] = useState(199);
+
+    const handleLike = () => {
+        setLike((like) => !like);
+        setNoteCount((current) => current + 1);
+    };
+
+    const handleDLike = () => {
+        setLike((like) => !like);
+        setNoteCount((current) => current - 1);
+    };
 
     return (
         <div className={cx('wrapper')}>
@@ -123,7 +135,13 @@ function Radar() {
                     <footer className={cx('foot')}>
                         <Blaze />
 
-                        <Interact sPad hasReply={false} notes={199} />
+                        <Interact
+                            hasReply={false}
+                            notes={noteCount}
+                            isLiked={like}
+                            handleLike={handleLike}
+                            handleDLike={handleDLike}
+                        />
                     </footer>
                 </article>
             </div>
