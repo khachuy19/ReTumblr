@@ -1,9 +1,9 @@
 import classNames from 'classnames/bind';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 import { Link } from 'react-router-dom';
 import MediaQuery, { useMediaQuery } from 'react-responsive';
-import { useShowtime } from 'react-showtime';
+import { useSpring } from '@react-spring/web';
 
 import styles from './Header.module.scss';
 import { ShortLogoIcon, SearchIcon, CloseIcon12, CloseIcon18 } from '~/components/Icons';
@@ -15,15 +15,40 @@ const cx = classNames.bind(styles);
 
 function Header() {
     const [showSearchResult, setShowSearchResult] = useState(false);
-    const [showMenu, setShowMenu] = useState(true);
+    const [showMenu, setShowMenu] = useState(false);
 
-    const [ref, isMounted, show, hide] = useShowtime({
-        startHidden: true,
-        showTransition: { transform: 'translateX(0)' },
-        hideTransition: { transform: 'translateX(-100%)' },
-        showDuration: 250,
-        showEasing: 'ease-in-out',
-    });
+    const [springs, api] = useSpring(() => ({
+        from: { x: -360 },
+    }));
+
+    const handleClsClick = () => {
+        api.start({
+            from: {
+                x: 0,
+            },
+            to: {
+                x: -360,
+            },
+        });
+
+        setTimeout(() => {
+            document.body.classList.toggle('has-modal');
+            setShowMenu(!showMenu);
+        }, 200);
+    };
+
+    const handleOpenMenuClick = () => {
+        api.start({
+            from: {
+                x: -360,
+            },
+            to: {
+                x: 0,
+            },
+        });
+
+        setShowMenu(!showMenu);
+    };
 
     const searchInputRef = useRef();
 
@@ -31,13 +56,13 @@ function Header() {
         <>
             <header className={cx('wrapper')}>
                 <button
-                    className={cx('menu-btn', { opened: isMounted })}
+                    className={cx('menu-btn')}
                     onClick={() => {
                         document.body.classList.toggle('has-modal');
                         if (showSearchResult) {
                             setShowSearchResult(!showSearchResult);
                         }
-                        show();
+                        handleOpenMenuClick();
                     }}
                 >
                     <span className={cx('bar')}></span>
@@ -75,7 +100,7 @@ function Header() {
                 )}
             </header>
 
-            {isMounted && <SidebarMdl ref={ref} isMouted={isMounted} hide={hide} />}
+            {showMenu && <SidebarMdl springs={springs} handleClsClick={handleClsClick} />}
         </>
     );
 }

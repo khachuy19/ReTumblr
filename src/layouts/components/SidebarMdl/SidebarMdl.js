@@ -1,7 +1,8 @@
 import classNames from 'classnames/bind';
 import { forwardRef, useRef, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import MediaQuery, { useMediaQuery } from 'react-responsive';
+// import MediaQuery, { useMediaQuery } from 'react-responsive';
+import { animated } from '@react-spring/web';
 
 import sidebarStyles from './SidebarMdl.module.scss';
 import btnStyles from '~/components/Button/Button.module.scss';
@@ -13,7 +14,6 @@ import {
     ExploreIcon,
     ActivityIcon,
     MessagesIcon,
-    InboxIcon,
     AccountIcon,
     SettingsIcon,
     GetDomainIcon,
@@ -21,18 +21,6 @@ import {
     PenIcon,
     CaretIcon,
     LogoIcon,
-    SmileFaceMessageIcon,
-    RoundHeartIcon,
-    RoundReblogIcon,
-    SmallTextIcon,
-    TextIcon,
-    CameraIcon,
-    QuoteIcon,
-    LinkIcon,
-    ChatIcon,
-    AudioIcon,
-    VideoIcon,
-    ShortLogoIcon,
     ModalCloseIcon,
 } from '~/components/Icons';
 import images from '~/assets/images';
@@ -42,9 +30,9 @@ import NewTxtPostMdl from '~/components/NewTxtPostMdl';
 const cx = classNames.bind(sidebarStyles);
 const cxx = classNames.bind(btnStyles);
 
-function SidebarMdl({ isMouted, hide }, ref) {
+function SidebarMdl({ springs, handleClsClick }) {
     const [homeActive, setHomeActive] = useState('/');
-    const [selectedIndex, setSelectedIndex] = useState(0);
+    // const [selectedIndex, setSelectedIndex] = useState(0);
     const [showCreaNewTxtPostMdl, setShowCreaNewTxtPostMdl] = useState(false);
 
     const subnavRef = useRef();
@@ -63,29 +51,16 @@ function SidebarMdl({ isMouted, hide }, ref) {
     return (
         <>
             <div className={cx('wrapper')}>
-                <aside ref={ref} className={cx('sidebar', { active: isMouted })}>
+                <animated.aside className={cx('sidebar')} style={{ ...springs }}>
                     <div className={cx('container')}>
                         <header className={cx('header')}>
                             <div className={cx('header-logo-cont')}>
-                                <Link
-                                    className={cx('logo-btn')}
-                                    to={config.routes.dashboard}
-                                    onClick={() => {
-                                        document.body.classList.toggle('has-modal');
-                                        hide();
-                                    }}
-                                >
+                                <Link className={cx('logo-btn')} to={config.routes.dashboard} onClick={handleClsClick}>
                                     <div className={cx('colorful-bg-logo')}></div>
                                     <LogoIcon className={cx('sidebar-logo')} />
                                 </Link>
 
-                                <button
-                                    className={cx('cls-btn')}
-                                    onClick={() => {
-                                        document.body.classList.toggle('has-modal');
-                                        hide();
-                                    }}
-                                >
+                                <button className={cx('cls-btn')} onClick={handleClsClick}>
                                     <ModalCloseIcon />
                                 </button>
                             </div>
@@ -97,9 +72,8 @@ function SidebarMdl({ isMouted, hide }, ref) {
                                 to={homeActive}
                                 onClick={() => {
                                     // console.log(homeActive);
-                                    setHomeActive(config.routes.dashboard);
-                                    document.body.classList.toggle('has-modal');
-                                    hide();
+                                    setHomeActive(config.routes.dashhandleClsClick);
+                                    handleClsClick();
                                 }}
                                 iconLeft={<HomeIcon />}
                             />
@@ -108,30 +82,21 @@ function SidebarMdl({ isMouted, hide }, ref) {
                                 title="Explore"
                                 to={config.routes.exploreToday}
                                 iconLeft={<ExploreIcon />}
-                                onClick={() => {
-                                    document.body.classList.toggle('has-modal');
-                                    hide();
-                                }}
+                                onClick={handleClsClick}
                             />
 
                             <MenuItem
                                 title="Activity"
                                 to={config.routes.activity}
                                 iconLeft={<ActivityIcon />}
-                                onClick={() => {
-                                    document.body.classList.toggle('has-modal');
-                                    hide();
-                                }}
+                                onClick={handleClsClick}
                             />
 
                             <MenuItem
                                 title="Messages"
                                 to={config.routes.messages}
                                 iconLeft={<MessagesIcon />}
-                                onClick={() => {
-                                    document.body.classList.toggle('has-modal');
-                                    hide();
-                                }}
+                                onClick={handleClsClick}
                             />
 
                             <Button
@@ -147,10 +112,7 @@ function SidebarMdl({ isMouted, hide }, ref) {
                                 <NavLink
                                     className={(nav) => cx({ active: nav.isActive })}
                                     to={config.routes.likes}
-                                    onClick={() => {
-                                        document.body.classList.toggle('has-modal');
-                                        hide();
-                                    }}
+                                    onClick={handleClsClick}
                                 >
                                     <span>Likes</span>
                                     <span>105</span>
@@ -159,22 +121,13 @@ function SidebarMdl({ isMouted, hide }, ref) {
                                 <NavLink
                                     className={(nav) => cx({ active: nav.isActive })}
                                     to={config.routes.following}
-                                    onClick={() => {
-                                        document.body.classList.toggle('has-modal');
-                                        hide();
-                                    }}
+                                    onClick={handleClsClick}
                                 >
                                     <span>Following</span>
                                     <span>19</span>
                                 </NavLink>
 
-                                <Button
-                                    className="sidebar-nav-log-out-btn"
-                                    onClick={() => {
-                                        document.body.classList.toggle('has-modal');
-                                        hide();
-                                    }}
-                                >
+                                <Button className="sidebar-nav-log-out-btn" onClick={handleClsClick}>
                                     Log out
                                 </Button>
 
@@ -197,30 +150,21 @@ function SidebarMdl({ isMouted, hide }, ref) {
                                 title="Settings"
                                 to={config.routes.settingAccount}
                                 iconLeft={<SettingsIcon />}
-                                onClick={() => {
-                                    document.body.classList.toggle('has-modal');
-                                    hide();
-                                }}
+                                onClick={handleClsClick}
                             />
 
                             <MenuItem
                                 title="Get a domain"
                                 to={config.routes.domain}
                                 iconLeft={<GetDomainIcon />}
-                                onClick={() => {
-                                    document.body.classList.toggle('has-modal');
-                                    hide();
-                                }}
+                                onClick={handleClsClick}
                             />
 
                             <MenuItem
                                 title="Go Ad-Free"
                                 to={config.routes.adFree}
                                 iconLeft={<AdFreeIcon />}
-                                onClick={() => {
-                                    document.body.classList.toggle('has-modal');
-                                    hide();
-                                }}
+                                onClick={handleClsClick}
                             />
                         </Menu>
                     </div>
@@ -233,7 +177,7 @@ function SidebarMdl({ isMouted, hide }, ref) {
                     </footer>
                     {/* <SuggestedAccounts label="Suggested accounts" />
                     <SuggestedAccounts label="Following accounts" /> */}
-                </aside>
+                </animated.aside>
             </div>
 
             <div ref={glassContainer} id={cx('glass-container')}>
